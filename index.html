@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    window.onload = function(){
+        function getDeviceName() {
+            var deviceName = '';
+    
+            var isMobile = {
+                Android: function () {
+                    return navigator.userAgent.match(/Android/i);
+                },
+                Datalogic: function () {
+                    return navigator.userAgent.match(/DL-AXIS/i);
+                },
+                Bluebird: function () {
+                    return navigator.userAgent.match(/EF500/i);
+                },
+                Honeywell: function () {
+                    return navigator.userAgent.match(/CT50/i);
+                },
+                Zebra: function () {
+                    return navigator.userAgent.match(/TC70|TC55/i);
+                },
+                BlackBerry: function () {
+                    return navigator.userAgent.match(/BlackBerry/i);
+                },
+                iOS: function () {
+                    return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+                },
+                Windows: function () {
+                    return navigator.userAgent.match(/IEMobile/i);
+                },
+                any: function () {
+                    return (isMobile.Datalogic() || isMobile.Bluebird() || isMobile.Honeywell() || isMobile.Zebra() || isMobile.BlackBerry() || isMobile.Android() || isMobile.iOS() || isMobile.Windows());
+                }
+            };
+    
+            if (isMobile.Datalogic())
+                deviceName = 'Datalogic';
+            else if (isMobile.Bluebird())
+                deviceName = 'Bluebird'; // android
+            else if (isMobile.Honeywell())
+                deviceName = 'Honeywell'; // android
+            else if (isMobile.Zebra())
+                deviceName = 'Zebra'; // android
+            else if (isMobile.BlackBerry())
+                deviceName = 'BlackBerry'; // android
+            else if (isMobile.iOS())
+                deviceName = 'iOS';
+            else if ((deviceName == '') && (isMobile.Android()))
+                deviceName = 'Android';
+            else if ((deviceName == '') && (isMobile.Windows()))
+                deviceName = 'Windows';
+    
+            return deviceName;
+        }
+    
+        function setDisplay() {
+            var device = getDeviceName();
+            // console.log(getDeviceName());
+            // var device = 'iOS';
+            // var device = 'Android';
+            // var device = 'PC'
+         if(device == "IOS"){
+            window.location.href = "http://m.stib.co/"
+         }else{
+            window.location.href = "https://play.google.com/store/apps/details?id=com.StiBLabs.StiBp2p"
+         }
+          
+        }
+        setDisplay();
+    }
+</script>
+</html>
