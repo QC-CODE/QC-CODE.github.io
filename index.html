@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta property="og:image" content="https://www.stib.co/img/back/banner%20pr%20fb-02.png">
+    <title>Simply a Better Digital Exchange of P2P! </title>    
 </head>
+
 <body>
-    
+
 </body>
 <script>
-    window.onload = function(){
+    window.onload = function () {
         function getDeviceName() {
             var deviceName = '';
-    
+
             var isMobile = {
                 Android: function () {
                     return navigator.userAgent.match(/Android/i);
@@ -43,7 +46,7 @@
                     return (isMobile.Datalogic() || isMobile.Bluebird() || isMobile.Honeywell() || isMobile.Zebra() || isMobile.BlackBerry() || isMobile.Android() || isMobile.iOS() || isMobile.Windows());
                 }
             };
-    
+
             if (isMobile.Datalogic())
                 deviceName = 'Datalogic';
             else if (isMobile.Bluebird())
@@ -60,24 +63,25 @@
                 deviceName = 'Android';
             else if ((deviceName == '') && (isMobile.Windows()))
                 deviceName = 'Windows';
-    
+
             return deviceName;
         }
-    
+
         function setDisplay() {
             var device = getDeviceName();
             // console.log(getDeviceName());
             // var device = 'iOS';
             // var device = 'Android';
             // var device = 'PC'
-         if(device == 'iOS'){
-            window.location.href = "http://m.stib.co/"
-         }else{
-            window.location.href = "https://play.google.com/store/apps/details?id=com.StiBLabs.StiBp2p"
-         }
-          
+            if (device == 'iOS') {
+                window.location.href = "http://m.stib.co/"
+            } else {
+                window.location.href = "https://play.google.com/store/apps/details?id=com.StiBLabs.StiBp2p"
+            }
+
         }
         setDisplay();
     }
 </script>
+
 </html>
