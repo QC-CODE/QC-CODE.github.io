@@ -1,87 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta property="og:image" content="https://www.stib.co/img/back/banner%20pr%20fb-02.png">
-    <title>Simply a Better Digital Exchange of P2P! </title>    
+  <meta charset="UTF-8">
+  <title>Net Rake Comparison</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fffaf0;
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .options {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .tabs {
+      display: inline-flex;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .tab {
+      padding: 8px 16px;
+      cursor: pointer;
+      background: #f6f6f6;
+      border-right: 1px solid #ccc;
+      font-weight: bold;
+    }
+    .tab:last-child {
+      border-right: none;
+    }
+    .tab.active {
+      background: #f6c547;
+      color: #000;
+    }
+    .players, .stake {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .players button {
+      padding: 5px 10px;
+      border: 1px solid #ccc;
+      background: #f6f6f6;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .players button.active {
+      background: #f6c547;
+      font-weight: bold;
+    }
+    .stake select {
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px 12px;
+      text-align: center;
+    }
+    th {
+      background: #f6c547;
+      color: #333;
+      font-weight: bold;
+    }
+    tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+    tr:hover {
+      background: #f1f1f1;
+    }
+    .rank {
+      font-weight: bold;
+    }
+    .network {
+      text-align: left;
+    }
+  </style>
 </head>
-
 <body>
 
+  <h2>Net Rake Comparison</h2>
+
+  <!-- Lựa chọn phía trên -->
+  <div class="options">
+    <!-- Tabs -->
+    <div class="tabs">
+      <div class="tab active">NLH</div>
+      <div class="tab">PLO</div>
+      <div class="tab">Fast Fold</div>
+      <div class="tab">Short Deck</div>
+    </div>
+
+    <!-- Players -->
+    <div class="players">
+      <span>Players:</span>
+      <button>2</button>
+      <button>3</button>
+      <button>4</button>
+      <button>5</button>
+      <button class="active">6</button>
+      <button>7</button>
+      <button>8</button>
+      <button>9</button>
+    </div>
+
+    <!-- Stake -->
+    <div class="stake">
+      <span>Limit:</span>
+      <select>
+         <option value="2">0.01 / 0.02</option>
+  <option value="5">0.02 / 0.05</option>
+  <option value="10">0.05 / 0.10</option>
+  <option value="25">0.10 / 0.25</option>
+  <option value="50" selected="">0.25 / 0.50</option>
+  <option value="100">0.50 / 1.00</option>
+  <option value="200">1.00 / 2.00</option>
+  <option value="500">2.50 / 5.00</option>
+  <option value="1000">5.00 / 10.00</option>
+  <option value="2000">10.00 / 20.00</option>
+  <option value="5000">25.00 / 50.00</option>
+  <option value="10000">50.00 / 100.00</option>
+  <option value="20000">100.00 / 200.00</option>
+  <option value="40000">200.00 / 400.00</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Bảng -->
+
+  <table>
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Network</th>
+        <th>Rake / 100 hands</th>
+        <th>Net Rake</th>
+        <th>Rake Rules</th>
+        <th>Operators</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="rank">1</td>
+        <td class="network">PokerStars</td>
+        <td>$3.70 (7.40 BB)</td>
+        <td>3.65%</td>
+        <td>5.00%<br>$2.00 cap</td>
+        <td>PokerStars</td>
+      </tr>
+      <tr>
+        <td class="rank">2</td>
+        <td class="network">CoinPoker</td>
+        <td>$3.80 (7.60 BB)</td>
+        <td>3.75%</td>
+        <td>5.00%<br>$2.25 cap</td>
+        <td>CoinPoker</td>
+      </tr>
+      <tr>
+        <td class="rank">3</td>
+        <td class="network">iPoker Network</td>
+        <td>€4.02 (8.04 BB)</td>
+        <td>3.96%</td>
+        <td>5.00%<br>€3.00 cap</td>
+        <td>Betsson, William Hill, bet-at-home</td>
+      </tr>
+      <tr>
+        <td class="rank">3</td>
+        <td class="network">Winning Poker</td>
+        <td>$4.02 (8.04 BB)</td>
+        <td>3.96%</td>
+        <td>5.00%<br>$3.00 cap</td>
+        <td>Americas Cardroom, Black Chip Poker</td>
+      </tr>
+      <tr>
+        <td class="rank">5</td>
+        <td class="network">888Poker</td>
+        <td>$4.21 (8.43 BB)</td>
+        <td>4.15%</td>
+        <td>5.00%<br>$4.00 cap</td>
+        <td>888Poker</td>
+      </tr>
+      <tr>
+        <td class="rank">5</td>
+        <td class="network">Horizon Poker</td>
+        <td>$4.21 (8.43 BB)</td>
+        <td>4.15%</td>
+        <td>5.00%<br>$4.00 cap</td>
+        <td>Juicy Stakes, Everygame</td>
+      </tr>
+      <tr>
+        <td class="rank">5</td>
+        <td class="network">PaiWangLuo</td>
+        <td>$4.21 (8.43 BB)</td>
+        <td>4.15%</td>
+        <td>5.00%<br>$4.00 cap</td>
+        <td>Ignition, Bovada, Bodog</td>
+      </tr>
+      <tr>
+        <td class="rank">8</td>
+        <td class="network">Unibet</td>
+        <td>€4.35 (8.69 BB)</td>
+        <td>4.28%</td>
+        <td>5.50%<br>€3.00 cap</td>
+        <td>Unibet</td>
+      </tr>
+      <tr>
+        <td class="rank">9</td>
+        <td class="network">GGPoker</td>
+        <td>$4.50 (9.00 BB)</td>
+        <td>4.44%</td>
+        <td>5.00%<br>$4.00 cap</td>
+        <td>GGPoker</td>
+      </tr>
+      <tr>
+        <td class="rank">10</td>
+        <td class="network">PokerStars Europe</td>
+        <td>€4.50 (9.01 BB)</td>
+        <td>4.44%</td>
+        <td>5.75%<br>€3.00 cap</td>
+        <td>PokerStars</td>
+      </tr>
+      <tr>
+        <td class="rank">10</td>
+        <td class="network">Winamax.fr</td>
+        <td>€4.50 (9.01 BB)</td>
+        <td>4.44%</td>
+        <td>5.75%<br>€3.00 cap</td>
+        <td>Winamax.fr</td>
+      </tr>
+      <tr>
+        <td class="rank">12</td>
+        <td class="network">Chico Poker</td>
+        <td>$4.51 (9.01 BB)</td>
+        <td>4.44%</td>
+        <td>5.56%<br>$3.50 cap</td>
+        <td>TigerGaming, BetOnline.ag, SportsBetting.ag</td>
+      </tr>
+      <tr>
+        <td class="rank">13</td>
+        <td class="network">JackPoker</td>
+        <td>$4.84 (9.68 BB)</td>
+        <td>4.77%</td>
+        <td>5.50%<br>$6.90 cap</td>
+        <td>JackPoker</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p style="text-align:center; margin-top:15px; font-size:14px; color:#666;">
+    Online poker rake comparison for 0.25 / 0.50 NLH 6 players
+  </p>
+
 </body>
-<script>
-    window.onload = function () {
-        function getDeviceName() {
-            var deviceName = '';
+  <!-- <script src="js/FF_2_2_0.01-0.02.js"></script> -->
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-            var isMobile = {
-                Android: function () {
-                    return navigator.userAgent.match(/Android/i);
-                },
-                Datalogic: function () {
-                    return navigator.userAgent.match(/DL-AXIS/i);
-                },
-                Bluebird: function () {
-                    return navigator.userAgent.match(/EF500/i);
-                },
-                Honeywell: function () {
-                    return navigator.userAgent.match(/CT50/i);
-                },
-                Zebra: function () {
-                    return navigator.userAgent.match(/TC70|TC55/i);
-                },
-                BlackBerry: function () {
-                    return navigator.userAgent.match(/BlackBerry/i);
-                },
-                iOS: function () {
-                    return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-                },
-                Windows: function () {
-                    return navigator.userAgent.match(/IEMobile/i);
-                },
-                any: function () {
-                    return (isMobile.Datalogic() || isMobile.Bluebird() || isMobile.Honeywell() || isMobile.Zebra() || isMobile.BlackBerry() || isMobile.Android() || isMobile.iOS() || isMobile.Windows());
-                }
-            };
+  <!-- Khởi tạo app Vue -->
+  <script>
+    const { createApp } = Vue;
 
-            if (isMobile.Datalogic())
-                deviceName = 'Datalogic';
-            else if (isMobile.Bluebird())
-                deviceName = 'Bluebird'; // android
-            else if (isMobile.Honeywell())
-                deviceName = 'Honeywell'; // android
-            else if (isMobile.Zebra())
-                deviceName = 'Zebra'; // android
-            else if (isMobile.BlackBerry())
-                deviceName = 'BlackBerry'; // android
-            else if (isMobile.iOS())
-                deviceName = 'iOS';
-            else if ((deviceName == '') && (isMobile.Android()))
-                deviceName = 'Android';
-            else if ((deviceName == '') && (isMobile.Windows()))
-                deviceName = 'Windows';
-
-            return deviceName;
+    createApp({
+      data() {
+        return {
+          players:6,
+          limit :50,
+          type:"NLH",
+          message: 'Xin chào Vue!'
         }
-
-        function setDisplay() {
-            var device = getDeviceName();
-            // console.log(getDeviceName());
-            // var device = 'iOS';
-            // var device = 'Android';
-            // var device = 'PC'
-            if (device == 'iOS') {
-                window.location.href = "http://m.stib.co/"
-            } else {
-                window.location.href = "https://play.google.com/store/apps/details?id=com.StiBLabs.StiBp2p"
-            }
-
+      },
+      methods: {
+        reverseMessage() {
+          this.message = this.message.split('').reverse().join('');
         }
-        setDisplay();
-    }
-</script>
-
+      },
+      mounted() {
+  // Code trong đây chạy sau khi Vue render DOM xong
+//   console.log('Component đã render xong DOM' ,data2);
+  
+}
+    }).mount('#app');
+  </script>
 </html>
