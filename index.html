@@ -92,7 +92,8 @@
     }
   </style>
 </head>
-<body>
+<body >
+   <div id="app">
 
   <h2>Net Rake Comparison</h2>
 
@@ -265,9 +266,9 @@
   <p style="text-align:center; margin-top:15px; font-size:14px; color:#666;">
     Online poker rake comparison for 0.25 / 0.50 NLH 6 players
   </p>
-
+</div>
 </body>
-  <!-- <script src="js/FF_2_2_0.01-0.02.js"></script> -->
+  <script src="FF_2_2_0.01-0.02.js"></script>
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
@@ -291,7 +292,14 @@
       },
       mounted() {
   // Code trong đây chạy sau khi Vue render DOM xong
+  console.log('ajaja' ,data2)
 //   console.log('Component đã render xong DOM' ,data2);
+     fetch("https://qc-code.github.io/FF_2_20000_100.00-200.00.json")
+      .then(response => response.json())
+      .then(data => {
+       console.log('akak ',data)
+      })
+      .catch(error => console.error('Lỗi khi load JSON:', error));
   
 }
     }).mount('#app');
