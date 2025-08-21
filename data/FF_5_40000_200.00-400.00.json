@@ -1,0 +1,145 @@
+[
+  {
+    "rank": "1",
+    "network": "PaiWangLuo",
+    "currency": "$21.92",
+    "bigBlinds": "0.05 BB",
+    "netRake": "0.03%",
+    "rakePercentage": "5.00%",
+    "rakeCap": "$3.00 cap",
+    "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+    "operators": "IgnitionBovadaBodog"
+  },
+  {
+    "rank": "1",
+    "network": "PokerStars Europe",
+    "currency": "€21.92",
+    "bigBlinds": "0.05 BB",
+    "netRake": "0.03%",
+    "rakePercentage": "5.00%",
+    "rakeCap": "€3.00 cap",
+    "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+    "operators": "PokerStars"
+  },
+  {
+    "rank": "1",
+    "network": "",
+    "currency": "€21.92",
+    "bigBlinds": "0.05 BB",
+    "netRake": "0.03%",
+    "rakePercentage": "6.00%",
+    "rakeCap": "€3.00 cap",
+    "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+    "operators": "Unibet"
+  },
+  {
+    "rank": "1",
+    "network": "Winning Poker",
+    "currency": "$21.92",
+    "bigBlinds": "0.05 BB",
+    "netRake": "0.03%",
+    "rakePercentage": "5.00%",
+    "rakeCap": "$3.00 cap",
+    "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+    "operators": "Americas CardroomBlack Chip Poker"
+  },
+  {
+    "rank": "5",
+    "network": "iPoker Network",
+    "currency": "€29.24",
+    "bigBlinds": "0.07 BB",
+    "netRake": "0.04%",
+    "rakePercentage": "5.00%",
+    "rakeCap": "€4.00 cap",
+    "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+    "operators": "BetssonWilliam Hillbet-at-home"
+  },
+  {
+    "rank": "5",
+    "network": "",
+    "currency": "€29.24",
+    "bigBlinds": "0.07 BB",
+    "netRake": "0.04%",
+    "rakePercentage": "5.75%",
+    "rakeCap": "€4.00 cap",
+    "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+    "operators": "Winamax.fr"
+  },
+  {
+    "rank": "7",
+    "network": "888Poker",
+    "currency": "$36.56",
+    "bigBlinds": "0.09 BB",
+    "netRake": "0.05%",
+    "rakePercentage": "5.00%",
+    "rakeCap": "$5.00 cap",
+    "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+    "operators": "888Poker"
+  },
+  {
+    "rank": "7",
+    "network": "Horizon Poker",
+    "currency": "$36.56",
+    "bigBlinds": "0.09 BB",
+    "netRake": "0.05%",
+    "rakePercentage": "5.00%",
+    "rakeCap": "$5.00 cap",
+    "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+    "operators": "Juicy StakesEverygame"
+  },
+  {
+    "rank": "7",
+    "network": "PokerStars",
+    "currency": "$36.56",
+    "bigBlinds": "0.09 BB",
+    "netRake": "0.05%",
+    "rakePercentage": "4.50%",
+    "rakeCap": "$5.00 cap",
+    "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+    "operators": "PokerStars"
+  },
+  {
+    "rank": "10",
+    "network": "GGPoker",
+    "currency": "$54.72",
+    "bigBlinds": "0.14 BB",
+    "netRake": "0.07%",
+    "rakePercentage": "5.00%",
+    "rakeCap": "$6.00 cap",
+    "rule": "Three-bet or flop (rake is taken a three-bet happens or when the hand goes to a flop)",
+    "operators": "GGPoker"
+  },
+  {
+    "rank": "11",
+    "network": "Chico Poker",
+    "currency": "$58.48",
+    "bigBlinds": "0.15 BB",
+    "netRake": "0.08%",
+    "rakePercentage": "5.56%",
+    "rakeCap": "$8.00 cap",
+    "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+    "operators": "TigerGamingBetOnline.agSportsBetting.ag"
+  },
+  {
+    "rank": "12",
+    "network": "CoinPoker",
+    "currency": "$182.80",
+    "bigBlinds": "0.46 BB",
+    "netRake": "0.25%",
+    "rakePercentage": "5.00%",
+    "rakeCap": "$25.00 cap",
+    "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+    "operators": "CoinPoker"
+  },
+  {
+    "rank": "13",
+    "network": "JackPoker",
+    "currency": "$233.96",
+    "bigBlinds": "0.58 BB",
+    "netRake": "0.32%",
+    "rakePercentage": "5.50%",
+    "rakeCap": "$32.00 cap",
+    "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+    "operators": "JackPoker"
+  }
+]

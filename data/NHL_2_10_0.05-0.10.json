@@ -1,0 +1,145 @@
+[
+  {
+    "rank": "1",
+    "network": "",
+    "currency": "€0.49",
+    "bigBlinds": "4.86 BB",
+    "netRake": "2.19%",
+    "rakePercentage": "3.00%",
+    "rakeCap": "€1.00 cap",
+    "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+    "operators": "Unibet"
+  },
+  {
+    "rank": "2",
+    "network": "PokerStars",
+    "currency": "$0.68",
+    "bigBlinds": "6.79 BB",
+    "netRake": "3.05%",
+    "rakePercentage": "4.50%",
+    "rakeCap": "$0.50 cap",
+    "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+    "operators": "PokerStars"
+  },
+  {
+    "rank": "3",
+    "network": "CoinPoker",
+    "currency": "$0.69",
+    "bigBlinds": "6.89 BB",
+    "netRake": "3.10%",
+    "rakePercentage": "5.00%",
+    "rakeCap": "$0.30 cap",
+    "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+    "operators": "CoinPoker"
+  },
+  {
+    "rank": "4",
+    "network": "Horizon Poker",
+    "currency": "$0.75",
+    "bigBlinds": "7.45 BB",
+    "netRake": "3.35%",
+    "rakePercentage": "5.00%",
+    "rakeCap": "$0.50 cap",
+    "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+    "operators": "Juicy StakesEverygame"
+  },
+  {
+    "rank": "4",
+    "network": "PaiWangLuo",
+    "currency": "$0.75",
+    "bigBlinds": "7.45 BB",
+    "netRake": "3.35%",
+    "rakePercentage": "5.00%",
+    "rakeCap": "$0.50 cap",
+    "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+    "operators": "IgnitionBovadaBodog"
+  },
+  {
+    "rank": "4",
+    "network": "Winning Poker",
+    "currency": "$0.75",
+    "bigBlinds": "7.45 BB",
+    "netRake": "3.35%",
+    "rakePercentage": "5.00%",
+    "rakeCap": "$0.50 cap",
+    "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+    "operators": "Americas CardroomBlack Chip Poker"
+  },
+  {
+    "rank": "7",
+    "network": "GGPoker",
+    "currency": "$0.79",
+    "bigBlinds": "7.92 BB",
+    "netRake": "3.56%",
+    "rakePercentage": "5.00%",
+    "rakeCap": "$0.50 cap",
+    "rule": "Three-bet or flop (rake is taken a three-bet happens or when the hand goes to a flop)",
+    "operators": "GGPoker"
+  },
+  {
+    "rank": "8",
+    "network": "888Poker",
+    "currency": "$0.80",
+    "bigBlinds": "8.02 BB",
+    "netRake": "3.61%",
+    "rakePercentage": "5.00%",
+    "rakeCap": "$1.00 cap",
+    "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+    "operators": "888Poker"
+  },
+  {
+    "rank": "9",
+    "network": "JackPoker",
+    "currency": "$0.86",
+    "bigBlinds": "8.62 BB",
+    "netRake": "3.88%",
+    "rakePercentage": "5.50%",
+    "rakeCap": "$0.87 cap",
+    "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+    "operators": "JackPoker"
+  },
+  {
+    "rank": "10",
+    "network": "",
+    "currency": "€0.88",
+    "bigBlinds": "8.83 BB",
+    "netRake": "3.97%",
+    "rakePercentage": "5.75%",
+    "rakeCap": "€0.75 cap",
+    "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+    "operators": "Winamax.fr"
+  },
+  {
+    "rank": "11",
+    "network": "PokerStars Europe",
+    "currency": "€0.92",
+    "bigBlinds": "9.17 BB",
+    "netRake": "4.13%",
+    "rakePercentage": "6.00%",
+    "rakeCap": "€0.75 cap",
+    "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+    "operators": "PokerStars"
+  },
+  {
+    "rank": "12",
+    "network": "Chico Poker",
+    "currency": "$0.98",
+    "bigBlinds": "9.80 BB",
+    "netRake": "4.41%",
+    "rakePercentage": "6.25%",
+    "rakeCap": "$1.00 cap",
+    "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+    "operators": "TigerGamingSportsBetting.agBetOnline.ag"
+  },
+  {
+    "rank": "13",
+    "network": "iPoker Network",
+    "currency": "€1.04",
+    "bigBlinds": "10.39 BB",
+    "netRake": "4.68%",
+    "rakePercentage": "6.67%",
+    "rakeCap": "€1.00 cap",
+    "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+    "operators": "BetssonWilliam Hillbet-at-home"
+  }
+]
