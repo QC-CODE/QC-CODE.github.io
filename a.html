@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Net Rake Chart</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background: #fff;
+    }
+
+    .k i {
+      font-size: 14px;
+      font-style: normal;
+      position: relative;
+      top: -1px;
+    }
+
+    .k[class*=d] i,
+    .k[class*=h] i {
+      color: red;
+    }
+
+    .k[class*=c] i,
+    .k[class*=d] i,
+    .k[class*=h] i,
+    .k[class*=s] i {
+      background-position: 50%;
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: 16px;
+      /* overflow: hidden; */
+      position: static;
+      /* text-indent: -999px; */
+      width: 9px;
+    }
+
+    .k {
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      column-gap: 2px;
+      display: inline-flex;
+      flex-wrap: nowrap;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 600;
+      justify-content: center;
+      line-height: 15px;
+      margin: 0 2px;
+      min-width: 28px;
+      padding: 0 2px;
+      position: relative;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+
+<body>
+  <b class="k koh">K<i>♥</i></b>
+  <b class="k koc">K<i>♣</i></b>
+  <b class="k kos">K<i>♠</i></b>
+  <b class="k kod">K<i>♦</i></b>
+</body>
+
+</html>

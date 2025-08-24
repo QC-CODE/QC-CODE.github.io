@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Net Rake Comparison</title>
@@ -9,10 +10,12 @@
       background: #fffaf0;
       padding: 20px;
     }
+
     h2 {
       text-align: center;
       margin-bottom: 20px;
     }
+
     .options {
       display: flex;
       justify-content: center;
@@ -21,12 +24,14 @@
       margin-bottom: 20px;
       flex-wrap: wrap;
     }
+
     .tabs {
       display: inline-flex;
       border: 1px solid #ccc;
       border-radius: 6px;
       overflow: hidden;
     }
+
     .tab {
       padding: 8px 16px;
       cursor: pointer;
@@ -34,18 +39,37 @@
       border-right: 1px solid #ccc;
       font-weight: bold;
     }
+
     .tab:last-child {
       border-right: none;
     }
+
     .tab.active {
       background: #f6c547;
       color: #000;
     }
-    .players, .stake {
+
+    .players,
+    .stake {
       display: flex;
       align-items: center;
       gap: 6px;
     }
+
+    hr,
+    hr.wp-block-separator {
+      border-top: 7.5px dotted #e9b949;
+      border-bottom: none;
+      margin: 30px 0;
+      clear: both;
+    }
+
+    .wp-block-separator {
+      border: 1px solid;
+      border-left: none;
+      border-right: none;
+    }
+
     .players button {
       padding: 5px 10px;
       border: 1px solid #ccc;
@@ -53,254 +77,767 @@
       cursor: pointer;
       border-radius: 4px;
     }
+
     .players button.active {
       background: #f6c547;
       font-weight: bold;
     }
+
     .stake select {
       padding: 5px;
       border: 1px solid #ccc;
       border-radius: 4px;
     }
+
     table {
       width: 100%;
       border-collapse: collapse;
       background: white;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
-    th, td {
+
+    th,
+    td {
       border: 1px solid #ddd;
       padding: 8px 12px;
       text-align: center;
     }
+
     th {
       background: #f6c547;
       color: #333;
       font-weight: bold;
     }
+
     tr:nth-child(even) {
       background: #f9f9f9;
     }
+
     tr:hover {
       background: #f1f1f1;
     }
+
     .rank {
       font-weight: bold;
     }
+
     .network {
       text-align: left;
     }
   </style>
 </head>
-<body >
-   <div id="app">
 
-  <h2>Net Rake Comparison</h2>
+<body>
+  <div id="app">
 
-  <!-- Lựa chọn phía trên -->
-  <div class="options">
-    <!-- Tabs -->
-    <div class="tabs">
-      <div class="tab active">NLH</div>
-      <div class="tab">PLO</div>
-      <div class="tab">Fast Fold</div>
-      <div class="tab">Short Deck</div>
+    <h2>Net Thang cu Tai Comparison</h2>
+
+    <!-- Lựa chọn phía trên -->
+    <div class="options">
+      <!-- Tabs -->
+      <div class="tabs">
+        <div @click="handleClicktype(item)" v-for="item in listtype" :key="item"
+          :class="type ==item ?'active tab':'tab'">{{object[item]}}</div>
+
+      </div>
+
+      <!-- Players -->
+      <div class="players">
+        <span>Players:</span>
+        <button @click="handleClick(item)" v-for="item in listplayers" :key="item"
+          :class="players ==item ?'active':''">{{item}}</button>
+
+      </div>
+
+      <!-- Stake -->
+      <div class="stake">
+        <span>Limit:</span>
+        <select @change="test" v-model="selectedRake">
+          <option v-for="item in rakeOptions" :key="item.value" :value="item.value">{{item.text}}</option>
+
+        </select>
+      </div>
     </div>
 
-    <!-- Players -->
-    <div class="players">
-      <span>Players:</span>
-      <button>2</button>
-      <button>3</button>
-      <button>4</button>
-      <button>5</button>
-      <button class="active">6</button>
-      <button>7</button>
-      <button>8</button>
-      <button>9</button>
+
+    <!-- Bảng -->
+
+    <table>
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Network</th>
+          <th>Rake / 100 hands</th>
+          <th>Net Rake</th>
+          <th>Rake Rules</th>
+          <th>Operators</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="item in data" :key="item.rank">
+          <td class="rank">{{item.rank}}</td>
+          <td class="network">{{item.network}}</td>
+          <td>{{item.currency}} ( {{item.bigBlinds}} )</td>
+          <td>{{item.netRake}}</td>
+          <td>{{item.rakePercentage}}<br>{{item.rakeCap}}</td>
+          <td>{{item.operators}}</td>
+        </tr>
+
+
+
+
+      </tbody>
+    </table>
+
+    <p style="text-align:center; margin-top:15px; font-size:14px; color:#666;">
+      Online poker rake comparison for {{limit}} {{object[type] }} {{players}} players
+    </p>
+
+    <hr class="wp-block-separator has-alpha-channel-opacity">
+    <div class="chart-area" id="rake-chart">
+      <svg width="auto" height="500" aria-label="A chart." style="overflow: hidden;">
+        <defs id="_ABSTRACT_RENDERER_ID_0">
+          <clipPath id="_ABSTRACT_RENDERER_ID_1">
+            <rect x="45" y="75" width="810" height="350"></rect>
+          </clipPath>
+          <filter id="_ABSTRACT_RENDERER_ID_2">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="2"></feGaussianBlur>
+            <feOffset dx="1" dy="1"></feOffset>
+            <feComponentTransfer>
+              <feFuncA type="linear" slope="0.1"></feFuncA>
+            </feComponentTransfer>
+            <feMerge>
+              <feMergeNode></feMergeNode>
+              <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+          </filter>
+        </defs>
+        <g><text text-anchor="start" x="45" y="49.9" font-family="Arial" font-size="14" font-weight="bold" stroke="none"
+            stroke-width="0" fill="#000000">Net Rake for {{limit}} {{object[type] }} ({{players}} players)</text>
+          <rect x="45" y="38" width="810" height="14" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff">
+          </rect>
+        </g>
+        <g>
+          <rect x="45" y="75" width="810" height="350" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff">
+          </rect>
+          <g>
+            <g>
+              <rect x="45" y="424" width="810" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect>
+              <rect x="45" y="354" width="810" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect>
+              <rect x="45" y="284" width="810" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect>
+              <rect x="45" y="215" width="810" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect>
+              <rect x="45" y="145" width="810" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect>
+              <rect x="45" y="75" width="810" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect>
+              <rect x="45" y="389" width="810" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect>
+              <rect x="45" y="319" width="810" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect>
+              <rect x="45" y="250" width="810" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect>
+              <rect x="45" y="180" width="810" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect>
+              <rect x="45" y="110" width="810" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect>
+            </g>
+            <g>
+              <rect  x="57" y="170" width="39" height="254" stroke="#7fff80" stroke-width="1" fill="#7fff80"></rect>
+              <rect x="120" y="163" width="38" height="261" stroke="#96ff80" stroke-width="1" fill="#96ff80"></rect>
+              <rect x="182" y="148" width="38" height="276" stroke="#c7ff80" stroke-width="1" fill="#c7ff80"></rect>
+              <rect x="244" y="148" width="39" height="276" stroke="#c7ff80" stroke-width="1" fill="#c7ff80"></rect>
+              <rect x="306" y="135" width="39" height="289" stroke="#f3ff80" stroke-width="1" fill="#f3ff80"></rect>
+              <rect x="369" y="135" width="38" height="289" stroke="#f3ff80" stroke-width="1" fill="#f3ff80"></rect>
+              <rect x="431" y="135" width="38" height="289" stroke="#f3ff80" stroke-width="1" fill="#f3ff80"></rect>
+              <rect x="493" y="126" width="38" height="298" stroke="#ffee80" stroke-width="1" fill="#ffee80"></rect>
+              <rect x="555" y="115" width="39" height="309" stroke="#ffcb80" stroke-width="1" fill="#ffcb80"></rect>
+              <rect x="617" y="115" width="39" height="309" stroke="#ffca80" stroke-width="1" fill="#ffca80"></rect>
+              <rect x="680" y="115" width="38" height="309" stroke="#ffca80" stroke-width="1" fill="#ffca80"></rect>
+              <rect x="742" y="115" width="38" height="309" stroke="#ffc980" stroke-width="1" fill="#ffc980"></rect>
+              <rect x="804" y="92" width="39" height="332" stroke="#ff7f80" stroke-width="1" fill="#ff7f80"></rect>
+            </g>
+            <g>
+              <rect x="45" y="424" width="810" height="1" stroke="none" stroke-width="0" fill="#333333"></rect>
+            </g>
+            <g>
+              <rect x="76" y="158" width="1" height="12" stroke="none" stroke-width="0" fill="#999999"></rect>
+              <rect x="139" y="151" width="1" height="12" stroke="none" stroke-width="0" fill="#999999"></rect>
+              <rect x="201" y="136" width="1" height="12" stroke="none" stroke-width="0" fill="#999999"></rect>
+              <rect x="263" y="136" width="1" height="12" stroke="none" stroke-width="0" fill="#999999"></rect>
+              <rect x="325" y="123" width="1" height="12" stroke="none" stroke-width="0" fill="#999999"></rect>
+              <rect x="388" y="123" width="1" height="12" stroke="none" stroke-width="0" fill="#999999"></rect>
+              <rect x="450" y="123" width="1" height="12" stroke="none" stroke-width="0" fill="#999999"></rect>
+              <rect x="512" y="114" width="1" height="12" stroke="none" stroke-width="0" fill="#999999"></rect>
+              <rect x="574" y="103" width="1" height="12" stroke="none" stroke-width="0" fill="#999999"></rect>
+              <rect x="636" y="103" width="1" height="12" stroke="none" stroke-width="0" fill="#999999"></rect>
+              <rect x="699" y="103" width="1" height="12" stroke="none" stroke-width="0" fill="#999999"></rect>
+              <rect x="761" y="103" width="1" height="12" stroke="none" stroke-width="0" fill="#999999"></rect>
+              <rect x="823" y="92" width="1" height="12" stroke="none" stroke-width="0" fill="#999999"></rect>
+            </g>
+          </g>
+          <g></g>
+          <g>
+            <g><text text-anchor="end" x="79.06538461538462" y="438.24352447854375" font-family="Arial" font-size="14"
+                transform="rotate(-30 79.06538461538462 438.24352447854375)" stroke="none" stroke-width="0"
+                fill="#222222">PokerStars</text></g>
+            <g><text text-anchor="end" x="141.29615384615386" y="438.24352447854375" font-family="Arial" font-size="14"
+                transform="rotate(-30 141.29615384615386 438.24352447854375)" stroke="none" stroke-width="0"
+                fill="#222222">CoinPoker</text></g>
+            <g><text text-anchor="end" x="203.52692307692308" y="438.24352447854375" font-family="Arial" font-size="14"
+                transform="rotate(-30 203.52692307692308 438.24352447854375)" stroke="none" stroke-width="0"
+                fill="#222222">iPoker Network</text></g>
+            <g><text text-anchor="end" x="265.7576923076923" y="438.24352447854375" font-family="Arial" font-size="14"
+                transform="rotate(-30 265.7576923076923 438.24352447854375)" stroke="none" stroke-width="0"
+                fill="#222222">Winning Poker</text></g>
+            <g><text text-anchor="end" x="327.98846153846154" y="438.24352447854375" font-family="Arial" font-size="14"
+                transform="rotate(-30 327.98846153846154 438.24352447854375)" stroke="none" stroke-width="0"
+                fill="#222222">888Poker</text></g>
+            <g><text text-anchor="end" x="390.21923076923076" y="438.24352447854375" font-family="Arial" font-size="14"
+                transform="rotate(-30 390.21923076923076 438.24352447854375)" stroke="none" stroke-width="0"
+                fill="#222222">Horizon Poker</text></g>
+            <g><text text-anchor="end" x="452.45" y="438.24352447854375" font-family="Arial" font-size="14"
+                transform="rotate(-30 452.45 438.24352447854375)" stroke="none" stroke-width="0"
+                fill="#222222">PaiWangLuo</text></g>
+            <g><text text-anchor="end" x="514.6807692307693" y="438.24352447854375" font-family="Arial" font-size="14"
+                transform="rotate(-30 514.6807692307693 438.24352447854375)" stroke="none" stroke-width="0"
+                fill="#222222">Unibet</text></g>
+            <g><text text-anchor="end" x="576.9115384615385" y="438.24352447854375" font-family="Arial" font-size="14"
+                transform="rotate(-30 576.9115384615385 438.24352447854375)" stroke="none" stroke-width="0"
+                fill="#222222">GGPoker</text></g>
+            <g><text text-anchor="end" x="639.1423076923078" y="438.24352447854375" font-family="Arial" font-size="14"
+                transform="rotate(-30 639.1423076923078 438.24352447854375)" stroke="none" stroke-width="0"
+                fill="#222222">PokerStars Euro…</text>
+              <path
+                d="M531.8673354495284,486.4378221735089L633.1923076923077,427.93782217350895L640.1923076923077,440.06217782649105L538.8673354495284,498.562177826491Z"
+                stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></path>
+            </g>
+            <g><text text-anchor="end" x="701.373076923077" y="438.24352447854375" font-family="Arial" font-size="14"
+                transform="rotate(-30 701.373076923077 438.24352447854375)" stroke="none" stroke-width="0"
+                fill="#222222">Winamax.fr</text></g>
+            <g><text text-anchor="end" x="763.6038461538462" y="438.24352447854375" font-family="Arial" font-size="14"
+                transform="rotate(-30 763.6038461538462 438.24352447854375)" stroke="none" stroke-width="0"
+                fill="#222222">Chico Poker</text></g>
+            <g><text text-anchor="end" x="825.8346153846155" y="438.24352447854375" font-family="Arial" font-size="14"
+                transform="rotate(-30 825.8346153846155 438.24352447854375)" stroke="none" stroke-width="0"
+                fill="#222222">JackPoker</text></g>
+          </g>
+          <g>
+            <g>
+              <g>
+                <rect x="53.5" y="143.5" width="46" height="16" stroke="none" stroke-width="0" fill-opacity="0"
+                  fill="#ffffff"></rect><text text-anchor="middle" x="76" y="155.9" font-family="Arial" font-size="14"
+                  stroke="none" stroke-width="0" fill="#59b35a">3.65%</text>
+                <rect x="56" y="144" width="40" height="14" stroke="none" stroke-width="0" fill-opacity="0"
+                  fill="#ffffff"></rect>
+              </g>
+            </g>
+            <g>
+              <g>
+                <rect x="116.5" y="136.5" width="46" height="16" stroke="none" stroke-width="0" fill-opacity="0"
+                  fill="#ffffff"></rect><text text-anchor="middle" x="139" y="148.9" font-family="Arial" font-size="14"
+                  stroke="none" stroke-width="0" fill="#69b35a">3.75%</text>
+                <rect x="119" y="137" width="40" height="14" stroke="none" stroke-width="0" fill-opacity="0"
+                  fill="#ffffff"></rect>
+              </g>
+            </g>
+            <g>
+              <g>
+                <rect x="178.5" y="121.5" width="46" height="16" stroke="none" stroke-width="0" fill-opacity="0"
+                  fill="#ffffff"></rect><text text-anchor="middle" x="201" y="133.9" font-family="Arial" font-size="14"
+                  stroke="none" stroke-width="0" fill="#8bb35a">3.96%</text>
+                <rect x="181" y="122" width="40" height="14" stroke="none" stroke-width="0" fill-opacity="0"
+                  fill="#ffffff"></rect>
+              </g>
+            </g>
+            <g>
+              <g>
+                <rect x="240.5" y="121.5" width="46" height="16" stroke="none" stroke-width="0" fill-opacity="0"
+                  fill="#ffffff"></rect><text text-anchor="middle" x="263" y="133.9" font-family="Arial" font-size="14"
+                  stroke="none" stroke-width="0" fill="#8bb35a">3.96%</text>
+                <rect x="243" y="122" width="40" height="14" stroke="none" stroke-width="0" fill-opacity="0"
+                  fill="#ffffff"></rect>
+              </g>
+            </g>
+            <g>
+              <g>
+                <rect x="302.5" y="108.5" width="46" height="16" stroke="none" stroke-width="0" fill-opacity="0"
+                  fill="#ffffff"></rect><text text-anchor="middle" x="325" y="120.9" font-family="Arial" font-size="14"
+                  stroke="none" stroke-width="0" fill="#aab35a">4.15%</text>
+                <rect x="305" y="109" width="40" height="14" stroke="none" stroke-width="0" fill-opacity="0"
+                  fill="#ffffff"></rect>
+              </g>
+            </g>
+            <g>
+              <g>
+                <rect x="365.5" y="108.5" width="46" height="16" stroke="none" stroke-width="0" fill-opacity="0"
+                  fill="#ffffff"></rect><text text-anchor="middle" x="388" y="120.9" font-family="Arial" font-size="14"
+                  stroke="none" stroke-width="0" fill="#aab35a">4.15%</text>
+                <rect x="368" y="109" width="40" height="14" stroke="none" stroke-width="0" fill-opacity="0"
+                  fill="#ffffff"></rect>
+              </g>
+            </g>
+            <g>
+              <g>
+                <rect x="427.5" y="108.5" width="46" height="16" stroke="none" stroke-width="0" fill-opacity="0"
+                  fill="#ffffff"></rect><text text-anchor="middle" x="450" y="120.9" font-family="Arial" font-size="14"
+                  stroke="none" stroke-width="0" fill="#aab35a">4.15%</text>
+                <rect x="430" y="109" width="40" height="14" stroke="none" stroke-width="0" fill-opacity="0"
+                  fill="#ffffff"></rect>
+              </g>
+            </g>
+            <g>
+              <g>
+                <rect x="489.5" y="99.5" width="46" height="16" stroke="none" stroke-width="0" fill-opacity="0"
+                  fill="#ffffff"></rect><text text-anchor="middle" x="512" y="111.9" font-family="Arial" font-size="14"
+                  stroke="none" stroke-width="0" fill="#b3a75a">4.28%</text>
+                <rect x="492" y="100" width="40" height="14" stroke="none" stroke-width="0" fill-opacity="0"
+                  fill="#ffffff"></rect>
+              </g>
+            </g>
+            <g>
+              <g>
+                <rect x="551.5" y="88.5" width="46" height="16" stroke="none" stroke-width="0" fill-opacity="0"
+                  fill="#ffffff"></rect><text text-anchor="middle" x="574" y="100.9" font-family="Arial" font-size="14"
+                  stroke="none" stroke-width="0" fill="#b38e5a">4.44%</text>
+                <rect x="554" y="89" width="40" height="14" stroke="none" stroke-width="0" fill-opacity="0"
+                  fill="#ffffff"></rect>
+              </g>
+            </g>
+            <g>
+              <g>
+                <rect x="613.5" y="88.5" width="46" height="16" stroke="none" stroke-width="0" fill-opacity="0"
+                  fill="#ffffff"></rect><text text-anchor="middle" x="636" y="100.9" font-family="Arial" font-size="14"
+                  stroke="none" stroke-width="0" fill="#b38d5a">4.44%</text>
+                <rect x="616" y="89" width="40" height="14" stroke="none" stroke-width="0" fill-opacity="0"
+                  fill="#ffffff"></rect>
+              </g>
+            </g>
+            <g>
+              <g>
+                <rect x="676.5" y="88.5" width="46" height="16" stroke="none" stroke-width="0" fill-opacity="0"
+                  fill="#ffffff"></rect><text text-anchor="middle" x="699" y="100.9" font-family="Arial" font-size="14"
+                  stroke="none" stroke-width="0" fill="#b38d5a">4.44%</text>
+                <rect x="679" y="89" width="40" height="14" stroke="none" stroke-width="0" fill-opacity="0"
+                  fill="#ffffff"></rect>
+              </g>
+            </g>
+            <g>
+              <g>
+                <rect x="738.5" y="88.5" width="46" height="16" stroke="none" stroke-width="0" fill-opacity="0"
+                  fill="#ffffff"></rect><text text-anchor="middle" x="761" y="100.9" font-family="Arial" font-size="14"
+                  stroke="none" stroke-width="0" fill="#b38d5a">4.44%</text>
+                <rect x="741" y="89" width="40" height="14" stroke="none" stroke-width="0" fill-opacity="0"
+                  fill="#ffffff"></rect>
+              </g>
+            </g>
+            <g>
+              <g>
+                <rect x="800.5" y="103.5" width="46" height="16" stroke="none" stroke-width="0" fill-opacity="0"
+                  fill="#ffffff"></rect><text text-anchor="middle" x="823" y="115.9" font-family="Arial" font-size="14"
+                  stroke="none" stroke-width="0" fill="#b3595a">4.77%</text>
+                <rect x="803" y="104" width="40" height="14" stroke="none" stroke-width="0" fill-opacity="0"
+                  fill="#ffffff"></rect>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g></g>
+      </svg>
     </div>
 
-    <!-- Stake -->
-    <div class="stake">
-      <span>Limit:</span>
-      <select>
-         <option value="2">0.01 / 0.02</option>
-  <option value="5">0.02 / 0.05</option>
-  <option value="10">0.05 / 0.10</option>
-  <option value="25">0.10 / 0.25</option>
-  <option value="50" selected="">0.25 / 0.50</option>
-  <option value="100">0.50 / 1.00</option>
-  <option value="200">1.00 / 2.00</option>
-  <option value="500">2.50 / 5.00</option>
-  <option value="1000">5.00 / 10.00</option>
-  <option value="2000">10.00 / 20.00</option>
-  <option value="5000">25.00 / 50.00</option>
-  <option value="10000">50.00 / 100.00</option>
-  <option value="20000">100.00 / 200.00</option>
-  <option value="40000">200.00 / 400.00</option>
-      </select>
+
+
+    <h2>Full Rake Comparison</h2>
+
+    <!-- Lựa chọn phía trên -->
+    <div class="options">
+      <!-- Tabs -->
+      <div class="tabs">
+        <div @click="handleClicktype(item)" v-for="item in listtype" :key="item"
+          :class="type ==item ?'active tab':'tab'">{{object[item]}}</div>
+
+      </div>
+
+      <!-- Players -->
+      <div class="players">
+        <span>Players:</span>
+        <button @click="handleClick(item)" v-for="item in listplayers" :key="item"
+          :class="players ==item ?'active':''">{{item}}</button>
+
+      </div>
+
+      <!-- Stake -->
+      <div class="stake">
+        <div class="tabs">
+          <div @click="handleClicktype3(item)" v-for="item in list_" :key="item"
+            :class="type2 ==item ?'active tab':'tab'">{{item}}</div>
+
+        </div>
+      </div>
+    </div>
+    <div id="rake_overview" class="">
+      <table class="prime-table highlight-first-column rake-overview rake-in-bb">
+        <caption>Online poker rake overview for NLH (6 players)<br>Green: Top 20% of networks for that limit, Red:
+          Bottom 20% of networks for that limit.</caption>
+        <thead>
+          <tr>
+            <th>Network \ Limit</th>
+            <th>0.05 / 0.10</th>
+            <th>0.10 / 0.25</th>
+            <th>0.25 / 0.50</th>
+            <th>0.50 / 1.00</th>
+            <th>1.00 / 2.00</th>
+            <th>2.50 / 5.00</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="rake-overview-network">
+              <div class="prime-network-logo-name"><a href="https://www.primedope.com/to-888"><img
+                    src="https://www.primedope.com/wp-content/uploads/888poker-logo-80x80-1.webp" alt="888Poker Logo"
+                    class="network-logo" height="40" width="40"></a><a
+                  href="https://www.primedope.com/to-888">888Poker</a></div>
+            </td>
+            <td class="neutral-background"><span class="rake-overview-currency">$0.89</span><span
+                class="rake-overview-bb">8.92 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">$2.23</span><span
+                class="rake-overview-bb">8.90 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">$4.21</span><span
+                class="rake-overview-bb">8.43 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">$7.66</span><span
+                class="rake-overview-bb">7.66 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">$10.71</span><span
+                class="rake-overview-bb">5.35 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">$18.27</span><span
+                class="rake-overview-bb">3.65 BB</span></td>
+          </tr>
+          <tr>
+            <td class="rake-overview-network">
+              <div class="prime-network-logo-name"><a href="https://www.primedope.com/to-tiger-gaming"><img
+                    src="https://www.primedope.com/wp-content/uploads/Chico-Poker-Network-Logo-40x40webp.webp"
+                    alt="Chico Poker Logo" class="network-logo" height="40" width="40"></a><a
+                  href="https://www.primedope.com/to-tiger-gaming">Chico Poker</a></div>
+            </td>
+            <td class="bad-background"><span class="rake-overview-currency">$1.11</span><span
+                class="rake-overview-bb">11.07 BB</span></td>
+            <td class="bad-background"><span class="rake-overview-currency">$2.65</span><span
+                class="rake-overview-bb">10.60 BB</span></td>
+            <td class="bad-background"><span class="rake-overview-currency">$4.51</span><span
+                class="rake-overview-bb">9.01 BB</span></td>
+            <td class="bad-background"><span class="rake-overview-currency">$8.29</span><span
+                class="rake-overview-bb">8.29 BB</span></td>
+            <td class="bad-background"><span class="rake-overview-currency">$11.46</span><span
+                class="rake-overview-bb">5.73 BB</span></td>
+            <td class="bad-background"><span class="rake-overview-currency">$24.92</span><span
+                class="rake-overview-bb">4.98 BB</span></td>
+          </tr>
+          <tr>
+            <td class="rake-overview-network">
+              <div class="prime-network-logo-name"><a href="https://www.primedope.com/to/coinpoker"><img
+                    src="https://www.primedope.com/wp-content/uploads/Coinpoker-Logo.webp" alt="CoinPoker Logo"
+                    class="network-logo" height="40" width="40"></a><a
+                  href="https://www.primedope.com/to/coinpoker">CoinPoker</a></div>
+            </td>
+            <td class="neutral-background"><span class="rake-overview-currency">$0.84</span><span
+                class="rake-overview-bb">8.40 BB</span></td>
+            <td class="good-background"><span class="rake-overview-currency">$2.08</span><span
+                class="rake-overview-bb">8.30 BB</span></td>
+            <td class="good-background"><span class="rake-overview-currency">$3.80</span><span
+                class="rake-overview-bb">7.60 BB</span></td>
+            <td class="good-background"><span class="rake-overview-currency">$6.73</span><span
+                class="rake-overview-bb">6.73 BB</span></td>
+            <td class="good-background"><span class="rake-overview-currency">$9.63</span><span
+                class="rake-overview-bb">4.81 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">$20.28</span><span
+                class="rake-overview-bb">4.06 BB</span></td>
+          </tr>
+          <tr>
+            <td class="rake-overview-network">
+              <div class="prime-network-logo-name"><a href="https://www.primedope.com/to-ggpoker"><img
+                    src="https://www.primedope.com/wp-content/uploads/ggpoker-logo-40x40.webp" alt="GGPoker Logo"
+                    class="network-logo" height="40" width="40"></a><a
+                  href="https://www.primedope.com/to-ggpoker">GGPoker</a></div>
+            </td>
+            <td class="neutral-background"><span class="rake-overview-currency">$0.91</span><span
+                class="rake-overview-bb">9.10 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">$2.21</span><span
+                class="rake-overview-bb">8.83 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">$4.50</span><span
+                class="rake-overview-bb">9.00 BB</span></td>
+            <td class="bad-background"><span class="rake-overview-currency">$8.55</span><span
+                class="rake-overview-bb">8.55 BB</span></td>
+            <td class="bad-background"><span class="rake-overview-currency">$13.51</span><span
+                class="rake-overview-bb">6.76 BB</span></td>
+            <td class="bad-background"><span class="rake-overview-currency">$27.88</span><span
+                class="rake-overview-bb">5.58 BB</span></td>
+          </tr>
+          <tr>
+            <td class="rake-overview-network">
+              <div class="prime-network-logo-name"><a href="https://www.primedope.com/to/juicy-stakes"><img
+                    src="https://www.primedope.com/wp-content/uploads/Horizon-Poker-Network-Logo-40x40.webp"
+                    alt="Horizon Poker Logo" class="network-logo" height="40" width="40"></a><a
+                  href="https://www.primedope.com/to/juicy-stakes">Horizon Poker</a></div>
+            </td>
+            <td class="neutral-background"><span class="rake-overview-currency">$0.89</span><span
+                class="rake-overview-bb">8.91 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">$2.21</span><span
+                class="rake-overview-bb">8.85 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">$4.21</span><span
+                class="rake-overview-bb">8.43 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">$7.66</span><span
+                class="rake-overview-bb">7.66 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">$10.71</span><span
+                class="rake-overview-bb">5.35 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">$18.27</span><span
+                class="rake-overview-bb">3.65 BB</span></td>
+          </tr>
+          <tr>
+            <td class="rake-overview-network">
+              <div class="prime-network-logo-name"><a href="https://www.primedope.com/to-betsson"><img
+                    src="https://www.primedope.com/wp-content/uploads/ipoker logo 40x40.webp" alt="iPoker Network Logo"
+                    class="network-logo" height="40" width="40"></a><a
+                  href="https://www.primedope.com/to-betsson">iPoker Network</a></div>
+            </td>
+            <td class="bad-background"><span class="rake-overview-currency">€1.19</span><span
+                class="rake-overview-bb">11.87 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">€2.12</span><span
+                class="rake-overview-bb">8.48 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">€4.02</span><span
+                class="rake-overview-bb">8.04 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">€7.66</span><span
+                class="rake-overview-bb">7.66 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">€10.71</span><span
+                class="rake-overview-bb">5.35 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">€18.27</span><span
+                class="rake-overview-bb">3.65 BB</span></td>
+          </tr>
+          <tr>
+            <td class="rake-overview-network">
+              <div class="prime-network-logo-name"><a href="https://www.primedope.com/to/jackpoker"><img
+                    src="https://www.primedope.com/wp-content/uploads/jackPoker-Logo-80x80-1.webp" alt="JackPoker Logo"
+                    class="network-logo" height="40" width="40"></a><a
+                  href="https://www.primedope.com/to/jackpoker">JackPoker</a></div>
+            </td>
+            <td class="neutral-background"><span class="rake-overview-currency">$0.98</span><span
+                class="rake-overview-bb">9.79 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">$2.43</span><span
+                class="rake-overview-bb">9.73 BB</span></td>
+            <td class="bad-background"><span class="rake-overview-currency">$4.84</span><span
+                class="rake-overview-bb">9.68 BB</span></td>
+            <td class="bad-background"><span class="rake-overview-currency">$9.57</span><span
+                class="rake-overview-bb">9.57 BB</span></td>
+            <td class="bad-background"><span class="rake-overview-currency">$15.10</span><span
+                class="rake-overview-bb">7.55 BB</span></td>
+            <td class="bad-background"><span class="rake-overview-currency">$31.82</span><span
+                class="rake-overview-bb">6.36 BB</span></td>
+          </tr>
+          <tr>
+            <td class="rake-overview-network">
+              <div class="prime-network-logo-name"><a href="https://www.primedope.com/to/ignition"><img
+                    src="https://www.primedope.com/wp-content/uploads/PaiWangLuo-Network-Logo-40x40.webp"
+                    alt="PaiWangLuo Logo" class="network-logo" height="40" width="40"></a><a
+                  href="https://www.primedope.com/to/ignition">PaiWangLuo</a></div>
+            </td>
+            <td class="neutral-background"><span class="rake-overview-currency">$0.89</span><span
+                class="rake-overview-bb">8.91 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">$2.12</span><span
+                class="rake-overview-bb">8.48 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">$4.21</span><span
+                class="rake-overview-bb">8.43 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">$7.66</span><span
+                class="rake-overview-bb">7.66 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">$10.71</span><span
+                class="rake-overview-bb">5.35 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">$18.27</span><span
+                class="rake-overview-bb">3.65 BB</span></td>
+          </tr>
+          <tr>
+            <td class="rake-overview-network">
+              <div class="prime-network-logo-name"><a href="https://www.primedope.com/to-pokerstars"><img
+                    src="https://www.primedope.com/wp-content/uploads/PokerStars-Logo-40x40.webp" alt="PokerStars Logo"
+                    class="network-logo" height="40" width="40"></a><a
+                  href="https://www.primedope.com/to-pokerstars">PokerStars</a></div>
+            </td>
+            <td class="good-background"><span class="rake-overview-currency">$0.80</span><span
+                class="rake-overview-bb">8.01 BB</span></td>
+            <td class="good-background"><span class="rake-overview-currency">$1.94</span><span
+                class="rake-overview-bb">7.75 BB</span></td>
+            <td class="good-background"><span class="rake-overview-currency">$3.70</span><span
+                class="rake-overview-bb">7.40 BB</span></td>
+            <td class="good-background"><span class="rake-overview-currency">$6.73</span><span
+                class="rake-overview-bb">6.73 BB</span></td>
+            <td class="good-background"><span class="rake-overview-currency">$9.30</span><span
+                class="rake-overview-bb">4.65 BB</span></td>
+            <td class="good-background"><span class="rake-overview-currency">$15.75</span><span
+                class="rake-overview-bb">3.15 BB</span></td>
+          </tr>
+          <tr>
+            <td class="rake-overview-network">
+              <div class="prime-network-logo-name"><a href="https://www.primedope.com/to-pokerstars"><img
+                    src="https://www.primedope.com/wp-content/uploads/PokerStars-Logo-40x40.webp"
+                    alt="PokerStars Europe Logo" class="network-logo" height="40" width="40"></a><a
+                  href="https://www.primedope.com/to-pokerstars">PokerStars Europe</a></div>
+            </td>
+            <td class="bad-background"><span class="rake-overview-currency">€1.05</span><span
+                class="rake-overview-bb">10.54 BB</span></td>
+            <td class="bad-background"><span class="rake-overview-currency">€2.51</span><span
+                class="rake-overview-bb">10.06 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">€4.50</span><span
+                class="rake-overview-bb">9.01 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">€7.84</span><span
+                class="rake-overview-bb">7.84 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">€10.46</span><span
+                class="rake-overview-bb">5.23 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">€16.75</span><span
+                class="rake-overview-bb">3.35 BB</span></td>
+          </tr>
+          <tr>
+            <td class="rake-overview-network">
+              <div class="prime-network-logo-name"><span><img
+                    src="https://www.primedope.com/wp-content/uploads/Unibet-Logo.webp" alt="Unibet Logo"
+                    class="network-logo" height="40" width="40"></span><span>Unibet</span></div>
+            </td>
+            <td class="good-background"><span class="rake-overview-currency">€0.54</span><span
+                class="rake-overview-bb">5.35 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">€2.21</span><span
+                class="rake-overview-bb">8.85 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">€4.35</span><span
+                class="rake-overview-bb">8.69 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">€8.08</span><span
+                class="rake-overview-bb">8.08 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">€10.73</span><span
+                class="rake-overview-bb">5.36 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">€17.06</span><span
+                class="rake-overview-bb">3.41 BB</span></td>
+          </tr>
+          <tr>
+            <td class="rake-overview-network">
+              <div class="prime-network-logo-name"><span><img
+                    src="https://www.primedope.com/wp-content/uploads/Winamax-Logo-80x80-1.webp" alt="Winamax.fr Logo"
+                    class="network-logo" height="40" width="40"></span><span>Winamax.fr</span></div>
+            </td>
+            <td class="neutral-background"><span class="rake-overview-currency">€1.02</span><span
+                class="rake-overview-bb">10.20 BB</span></td>
+            <td class="bad-background"><span class="rake-overview-currency">€2.53</span><span
+                class="rake-overview-bb">10.11 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">€4.50</span><span
+                class="rake-overview-bb">9.01 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">€7.84</span><span
+                class="rake-overview-bb">7.84 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">€10.46</span><span
+                class="rake-overview-bb">5.23 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">€16.75</span><span
+                class="rake-overview-bb">3.35 BB</span></td>
+          </tr>
+          <tr>
+            <td class="rake-overview-network">
+              <div class="prime-network-logo-name"><a href="https://www.primedope.com/to-acr"><img
+                    src="https://www.primedope.com/wp-content/uploads/Winning-Poker-Network-Logo-40x40.webp"
+                    alt="Winning Poker Logo" class="network-logo" height="40" width="40"></a><a
+                  href="https://www.primedope.com/to-acr">Winning Poker</a></div>
+            </td>
+            <td class="neutral-background"><span class="rake-overview-currency">$0.89</span><span
+                class="rake-overview-bb">8.92 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">$2.21</span><span
+                class="rake-overview-bb">8.85 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">$4.02</span><span
+                class="rake-overview-bb">8.04 BB</span></td>
+            <td class="neutral-background"><span class="rake-overview-currency">$7.10</span><span
+                class="rake-overview-bb">7.10 BB</span></td>
+            <td class="good-background"><span class="rake-overview-currency">$9.63</span><span
+                class="rake-overview-bb">4.81 BB</span></td>
+            <td class="good-background"><span class="rake-overview-currency">$15.75</span><span
+                class="rake-overview-bb">3.15 BB</span></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
-
-  <!-- Bảng -->
-
-  <table>
-    <thead>
-      <tr>
-        <th>Rank</th>
-        <th>Network</th>
-        <th>Rake / 100 hands</th>
-        <th>Net Rake</th>
-        <th>Rake Rules</th>
-        <th>Operators</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="rank">1</td>
-        <td class="network">PokerStars</td>
-        <td>$3.70 (7.40 BB)</td>
-        <td>3.65%</td>
-        <td>5.00%<br>$2.00 cap</td>
-        <td>PokerStars</td>
-      </tr>
-      <tr>
-        <td class="rank">2</td>
-        <td class="network">CoinPoker</td>
-        <td>$3.80 (7.60 BB)</td>
-        <td>3.75%</td>
-        <td>5.00%<br>$2.25 cap</td>
-        <td>CoinPoker</td>
-      </tr>
-      <tr>
-        <td class="rank">3</td>
-        <td class="network">iPoker Network</td>
-        <td>€4.02 (8.04 BB)</td>
-        <td>3.96%</td>
-        <td>5.00%<br>€3.00 cap</td>
-        <td>Betsson, William Hill, bet-at-home</td>
-      </tr>
-      <tr>
-        <td class="rank">3</td>
-        <td class="network">Winning Poker</td>
-        <td>$4.02 (8.04 BB)</td>
-        <td>3.96%</td>
-        <td>5.00%<br>$3.00 cap</td>
-        <td>Americas Cardroom, Black Chip Poker</td>
-      </tr>
-      <tr>
-        <td class="rank">5</td>
-        <td class="network">888Poker</td>
-        <td>$4.21 (8.43 BB)</td>
-        <td>4.15%</td>
-        <td>5.00%<br>$4.00 cap</td>
-        <td>888Poker</td>
-      </tr>
-      <tr>
-        <td class="rank">5</td>
-        <td class="network">Horizon Poker</td>
-        <td>$4.21 (8.43 BB)</td>
-        <td>4.15%</td>
-        <td>5.00%<br>$4.00 cap</td>
-        <td>Juicy Stakes, Everygame</td>
-      </tr>
-      <tr>
-        <td class="rank">5</td>
-        <td class="network">PaiWangLuo</td>
-        <td>$4.21 (8.43 BB)</td>
-        <td>4.15%</td>
-        <td>5.00%<br>$4.00 cap</td>
-        <td>Ignition, Bovada, Bodog</td>
-      </tr>
-      <tr>
-        <td class="rank">8</td>
-        <td class="network">Unibet</td>
-        <td>€4.35 (8.69 BB)</td>
-        <td>4.28%</td>
-        <td>5.50%<br>€3.00 cap</td>
-        <td>Unibet</td>
-      </tr>
-      <tr>
-        <td class="rank">9</td>
-        <td class="network">GGPoker</td>
-        <td>$4.50 (9.00 BB)</td>
-        <td>4.44%</td>
-        <td>5.00%<br>$4.00 cap</td>
-        <td>GGPoker</td>
-      </tr>
-      <tr>
-        <td class="rank">10</td>
-        <td class="network">PokerStars Europe</td>
-        <td>€4.50 (9.01 BB)</td>
-        <td>4.44%</td>
-        <td>5.75%<br>€3.00 cap</td>
-        <td>PokerStars</td>
-      </tr>
-      <tr>
-        <td class="rank">10</td>
-        <td class="network">Winamax.fr</td>
-        <td>€4.50 (9.01 BB)</td>
-        <td>4.44%</td>
-        <td>5.75%<br>€3.00 cap</td>
-        <td>Winamax.fr</td>
-      </tr>
-      <tr>
-        <td class="rank">12</td>
-        <td class="network">Chico Poker</td>
-        <td>$4.51 (9.01 BB)</td>
-        <td>4.44%</td>
-        <td>5.56%<br>$3.50 cap</td>
-        <td>TigerGaming, BetOnline.ag, SportsBetting.ag</td>
-      </tr>
-      <tr>
-        <td class="rank">13</td>
-        <td class="network">JackPoker</td>
-        <td>$4.84 (9.68 BB)</td>
-        <td>4.77%</td>
-        <td>5.50%<br>$6.90 cap</td>
-        <td>JackPoker</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <p style="text-align:center; margin-top:15px; font-size:14px; color:#666;">
-    Online poker rake comparison for 0.25 / 0.50 NLH 6 players
-  </p>
-</div>
 </body>
-  <script src="FF_2_2_0.01-0.02.js"></script>
+
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-  <!-- Khởi tạo app Vue -->
-  <script>
-    const { createApp } = Vue;
+<!-- Khởi tạo app Vue -->
+<script>
+  const { createApp } = Vue;
 
-    createApp({
-      data() {
-        return {
-          players:6,
-          limit :50,
-          type:"NLH",
-          message: 'Xin chào Vue!'
-        }
+  createApp({
+    data() {
+      return {
+        players: 6,
+        type2: "Rake / 100 hands",
+        list_: ["Rake / 100 hands", "Net Rake", "Formal Rake"],
+        selectedRake: 50,
+        limit: "",
+        type: "NHL",
+        object: {
+          "NHL": "NHL",
+          "PLO": "PLO",
+          "FF": "Fast Fold",
+          "SD": "Short Deck"
+        },
+        data: [],
+        listtype: ["NHL", "PLO", "FF", "SD"],
+        listlimit: [],
+        listplayers: ["2", "3", "4", "5", "6", "7", "8", "9"],
+        rakeOptions: [
+          { value: "2", text: "0.01-0.02" },
+          { value: "5", text: "0.02-0.05" },
+          { value: "10", text: "0.05-0.10" },
+          { value: "25", text: "0.10-0.25" },
+          { value: "50", text: "0.25-0.50" },
+          { value: "100", text: "0.50-1.00" },
+          { value: "200", text: "1.00-2.00" },
+          { value: "500", text: "2.50-5.00" },
+          { value: "1000", text: "5.00-10.00" },
+          { value: "2000", text: "10.00-20.00" },
+          { value: "5000", text: "25.00-50.00" },
+          { value: "10000", text: "50.00-100.00" },
+          { value: "20000", text: "100.00-200.00" },
+          { value: "40000", text: "200.00-400.00" }
+        ],
+        message: 'Xin chào Vue!'
+      }
+    },
+    methods: {
+      reverseMessage() {
+        this.message = this.message.split('').reverse().join('');
       },
-      methods: {
-        reverseMessage() {
-          this.message = this.message.split('').reverse().join('');
-        }
+      handleClicktype(data) {
+        this.type = data
+        this.loaddata()
+
       },
-      mounted() {
-  // Code trong đây chạy sau khi Vue render DOM xong
-  console.log('ajaja' ,data2)
-//   console.log('Component đã render xong DOM' ,data2);
-     fetch("https://qc-code.github.io/FF_2_20000_100.00-200.00.json")
-      .then(response => response.json())
-      .then(data => {
-       console.log('akak ',data)
-      })
-      .catch(error => console.error('Lỗi khi load JSON:', error));
-}
-    }).mount('#app');
-  </script>
+      handleClicktype3(data) {
+        this.type2 = data
+      },
+      handleClick(data) {
+        this.players = data
+        this.loaddata()
+      },
+      test() {
+        this.loaddata()
+      },
+      loaddata() {
+        let loc = this.rakeOptions.filter(e => e.value == this.selectedRake)
+        if (loc.length == 0) return
+        this.limit = loc[0].text
+        let a = this.type + '_' + this.players + "_" + this.selectedRake + "_" + loc[0].text + '.json'
+        let url = "https://qc-code.github.io/data/" + a
+        fetch(url)
+          .then(response => response.json())
+          .then(data => {
+            this.data = data.map(e => {
+              if (!e.network) {
+                e.network = e.operators
+              }
+              return e
+            })
+          })
+          .catch(error => console.error('Lỗi khi load JSON:', error));
+      }
+    },
+    mounted() {
+      // Code trong đây chạy sau khi Vue render DOM xong
+      // console.log('ajaja', data2)
+      //   console.log('Component đã render xong DOM' ,data2);
+      this.loaddata()
+    }
+  }).mount('#app');
+</script>
+
 </html>
