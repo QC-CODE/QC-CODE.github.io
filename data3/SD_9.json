@@ -1,0 +1,1237 @@
+[
+  {
+    "network": [
+      {
+        "file": "SD_9_10_0.05-0.10.json",
+        "value": "10",
+        "data": {
+          "rank": "8",
+          "network": "888Poker",
+          "currency": "$0.85",
+          "bigBlinds": "8.53 BB",
+          "netRake": "4.56%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$4.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "888Poker"
+        }
+      },
+      {
+        "file": "SD_9_25_0.10-0.25.json",
+        "value": "25",
+        "data": {
+          "rank": "9",
+          "network": "888Poker",
+          "currency": "$2.13",
+          "bigBlinds": "8.51 BB",
+          "netRake": "4.55%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$4.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "888Poker"
+        }
+      },
+      {
+        "file": "SD_9_50_0.25-0.50.json",
+        "value": "50",
+        "data": {
+          "rank": "6",
+          "network": "888Poker",
+          "currency": "$4.04",
+          "bigBlinds": "8.08 BB",
+          "netRake": "4.32%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$4.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "888Poker"
+        }
+      },
+      {
+        "file": "SD_9_100_0.50-1.00.json",
+        "value": "100",
+        "data": {
+          "rank": "5",
+          "network": "888Poker",
+          "currency": "$7.02",
+          "bigBlinds": "7.02 BB",
+          "netRake": "3.69%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$4.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "888Poker"
+        }
+      },
+      {
+        "file": "SD_9_200_1.00-2.00.json",
+        "value": "200",
+        "data": {
+          "rank": "8",
+          "network": "888Poker",
+          "currency": "$9.97",
+          "bigBlinds": "4.98 BB",
+          "netRake": "2.80%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$4.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "888Poker"
+        }
+      },
+      {
+        "file": "SD_9_500_2.50-5.00.json",
+        "value": "500",
+        "data": {
+          "rank": "6",
+          "network": "888Poker",
+          "currency": "$16.18",
+          "bigBlinds": "3.24 BB",
+          "netRake": "1.82%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$4.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "888Poker"
+        }
+      }
+    ],
+    "name": "888Poker"
+  },
+  {
+    "network": [
+      {
+        "file": "SD_9_10_0.05-0.10.json",
+        "value": "10",
+        "data": {
+          "rank": "12",
+          "network": "Chico Poker",
+          "currency": "$1.06",
+          "bigBlinds": "10.58 BB",
+          "netRake": "5.66%",
+          "rakePercentage": "6.25%",
+          "rakeCap": "$1.50 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "TigerGamingBetOnline.agSportsBetting.ag"
+        }
+      },
+      {
+        "file": "SD_9_25_0.10-0.25.json",
+        "value": "25",
+        "data": {
+          "rank": "13",
+          "network": "Chico Poker",
+          "currency": "$2.53",
+          "bigBlinds": "10.10 BB",
+          "netRake": "5.40%",
+          "rakePercentage": "6.25%",
+          "rakeCap": "$2.50 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "TigerGamingBetOnline.agSportsBetting.ag"
+        }
+      },
+      {
+        "file": "SD_9_50_0.25-0.50.json",
+        "value": "50",
+        "data": {
+          "rank": "12",
+          "network": "Chico Poker",
+          "currency": "$4.30",
+          "bigBlinds": "8.60 BB",
+          "netRake": "4.60%",
+          "rakePercentage": "5.56%",
+          "rakeCap": "$3.50 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "TigerGamingBetOnline.agSportsBetting.ag"
+        }
+      },
+      {
+        "file": "SD_9_100_0.50-1.00.json",
+        "value": "100",
+        "data": {
+          "rank": "12",
+          "network": "Chico Poker",
+          "currency": "$7.56",
+          "bigBlinds": "7.56 BB",
+          "netRake": "3.97%",
+          "rakePercentage": "5.56%",
+          "rakeCap": "$4.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "TigerGamingBetOnline.agSportsBetting.ag"
+        }
+      },
+      {
+        "file": "SD_9_200_1.00-2.00.json",
+        "value": "200",
+        "data": {
+          "rank": "12",
+          "network": "Chico Poker",
+          "currency": "$10.61",
+          "bigBlinds": "5.31 BB",
+          "netRake": "2.98%",
+          "rakePercentage": "5.56%",
+          "rakeCap": "$4.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "TigerGamingBetOnline.agSportsBetting.ag"
+        }
+      },
+      {
+        "file": "SD_9_500_2.50-5.00.json",
+        "value": "500",
+        "data": {
+          "rank": "11",
+          "network": "Chico Poker",
+          "currency": "$22.64",
+          "bigBlinds": "4.53 BB",
+          "netRake": "2.54%",
+          "rakePercentage": "5.56%",
+          "rakeCap": "$7.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "TigerGamingBetOnline.agSportsBetting.ag"
+        }
+      }
+    ],
+    "name": "Chico Poker"
+  },
+  {
+    "network": [
+      {
+        "file": "SD_9_10_0.05-0.10.json",
+        "value": "10",
+        "data": {
+          "rank": "4",
+          "network": "CoinPoker",
+          "currency": "$0.80",
+          "bigBlinds": "7.99 BB",
+          "netRake": "4.27%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$0.75 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "CoinPoker"
+        }
+      },
+      {
+        "file": "SD_9_25_0.10-0.25.json",
+        "value": "25",
+        "data": {
+          "rank": "3",
+          "network": "CoinPoker",
+          "currency": "$1.97",
+          "bigBlinds": "7.89 BB",
+          "netRake": "4.22%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$1.75 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "CoinPoker"
+        }
+      },
+      {
+        "file": "SD_9_50_0.25-0.50.json",
+        "value": "50",
+        "data": {
+          "rank": "3",
+          "network": "CoinPoker",
+          "currency": "$3.59",
+          "bigBlinds": "7.17 BB",
+          "netRake": "3.84%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$2.25 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "CoinPoker"
+        }
+      },
+      {
+        "file": "SD_9_100_0.50-1.00.json",
+        "value": "100",
+        "data": {
+          "rank": "2",
+          "network": "CoinPoker",
+          "currency": "$6.02",
+          "bigBlinds": "6.02 BB",
+          "netRake": "3.16%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$2.50 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "CoinPoker"
+        }
+      },
+      {
+        "file": "SD_9_200_1.00-2.00.json",
+        "value": "200",
+        "data": {
+          "rank": "2",
+          "network": "CoinPoker",
+          "currency": "$8.83",
+          "bigBlinds": "4.41 BB",
+          "netRake": "2.48%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$3.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "CoinPoker"
+        }
+      },
+      {
+        "file": "SD_9_500_2.50-5.00.json",
+        "value": "500",
+        "data": {
+          "rank": "10",
+          "network": "CoinPoker",
+          "currency": "$18.19",
+          "bigBlinds": "3.64 BB",
+          "netRake": "2.04%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$5.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "CoinPoker"
+        }
+      }
+    ],
+    "name": "CoinPoker"
+  },
+  {
+    "network": [
+      {
+        "file": "SD_9_10_0.05-0.10.json",
+        "value": "10",
+        "data": {
+          "rank": "2",
+          "network": "GGPoker",
+          "currency": "$0.67",
+          "bigBlinds": "6.75 BB",
+          "netRake": "3.61%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$0.30 cap",
+          "rule": "Three-bet or flop (rake is taken a three-bet happens or when the hand goes to a flop)",
+          "operators": "GGPoker"
+        }
+      },
+      {
+        "file": "SD_9_25_0.10-0.25.json",
+        "value": "25",
+        "data": {
+          "rank": "1",
+          "network": "GGPoker",
+          "currency": "$1.47",
+          "bigBlinds": "5.88 BB",
+          "netRake": "3.14%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$0.50 cap",
+          "rule": "Three-bet or flop (rake is taken a three-bet happens or when the hand goes to a flop)",
+          "operators": "GGPoker"
+        }
+      },
+      {
+        "file": "SD_9_50_0.25-0.50.json",
+        "value": "50",
+        "data": {
+          "rank": "1",
+          "network": "GGPoker",
+          "currency": "$2.94",
+          "bigBlinds": "5.88 BB",
+          "netRake": "3.14%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$1.00 cap",
+          "rule": "Three-bet or flop (rake is taken a three-bet happens or when the hand goes to a flop)",
+          "operators": "GGPoker"
+        }
+      },
+      {
+        "file": "SD_9_100_0.50-1.00.json",
+        "value": "100",
+        "data": {
+          "rank": "1",
+          "network": "GGPoker",
+          "currency": "$5.92",
+          "bigBlinds": "5.92 BB",
+          "netRake": "3.11%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$2.00 cap",
+          "rule": "Three-bet or flop (rake is taken a three-bet happens or when the hand goes to a flop)",
+          "operators": "GGPoker"
+        }
+      },
+      {
+        "file": "SD_9_200_1.00-2.00.json",
+        "value": "200",
+        "data": {
+          "rank": "7",
+          "network": "GGPoker",
+          "currency": "$9.91",
+          "bigBlinds": "4.95 BB",
+          "netRake": "2.78%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$3.00 cap",
+          "rule": "Three-bet or flop (rake is taken a three-bet happens or when the hand goes to a flop)",
+          "operators": "GGPoker"
+        }
+      },
+      {
+        "file": "SD_9_500_2.50-5.00.json",
+        "value": "500",
+        "data": {
+          "rank": "12",
+          "network": "GGPoker",
+          "currency": "$24.77",
+          "bigBlinds": "4.95 BB",
+          "netRake": "2.78%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$7.50 cap",
+          "rule": "Three-bet or flop (rake is taken a three-bet happens or when the hand goes to a flop)",
+          "operators": "GGPoker"
+        }
+      }
+    ],
+    "name": "GGPoker"
+  },
+  {
+    "network": [
+      {
+        "file": "SD_9_10_0.05-0.10.json",
+        "value": "10",
+        "data": {
+          "rank": "5",
+          "network": "Horizon Poker",
+          "currency": "$0.85",
+          "bigBlinds": "8.52 BB",
+          "netRake": "4.56%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$2.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "Juicy StakesEverygame"
+        }
+      },
+      {
+        "file": "SD_9_25_0.10-0.25.json",
+        "value": "25",
+        "data": {
+          "rank": "6",
+          "network": "Horizon Poker",
+          "currency": "$2.12",
+          "bigBlinds": "8.47 BB",
+          "netRake": "4.53%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$3.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "Juicy StakesEverygame"
+        }
+      },
+      {
+        "file": "SD_9_50_0.25-0.50.json",
+        "value": "50",
+        "data": {
+          "rank": "6",
+          "network": "Horizon Poker",
+          "currency": "$4.04",
+          "bigBlinds": "8.08 BB",
+          "netRake": "4.32%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$4.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "Juicy StakesEverygame"
+        }
+      },
+      {
+        "file": "SD_9_100_0.50-1.00.json",
+        "value": "100",
+        "data": {
+          "rank": "5",
+          "network": "Horizon Poker",
+          "currency": "$7.02",
+          "bigBlinds": "7.02 BB",
+          "netRake": "3.69%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$4.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "Juicy StakesEverygame"
+        }
+      },
+      {
+        "file": "SD_9_200_1.00-2.00.json",
+        "value": "200",
+        "data": {
+          "rank": "8",
+          "network": "Horizon Poker",
+          "currency": "$9.97",
+          "bigBlinds": "4.98 BB",
+          "netRake": "2.80%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$4.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "Juicy StakesEverygame"
+        }
+      },
+      {
+        "file": "SD_9_500_2.50-5.00.json",
+        "value": "500",
+        "data": {
+          "rank": "6",
+          "network": "Horizon Poker",
+          "currency": "$16.18",
+          "bigBlinds": "3.24 BB",
+          "netRake": "1.82%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$4.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "Juicy StakesEverygame"
+        }
+      }
+    ],
+    "name": "Horizon Poker"
+  },
+  {
+    "network": [
+      {
+        "file": "SD_9_10_0.05-0.10.json",
+        "value": "10",
+        "data": {
+          "rank": "13",
+          "network": "iPoker Network",
+          "currency": "€1.13",
+          "bigBlinds": "11.35 BB",
+          "netRake": "6.07%",
+          "rakePercentage": "6.67%",
+          "rakeCap": "€2.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "BetssonWilliam Hillbet-at-home"
+        }
+      },
+      {
+        "file": "SD_9_25_0.10-0.25.json",
+        "value": "25",
+        "data": {
+          "rank": "4",
+          "network": "iPoker Network",
+          "currency": "€2.02",
+          "bigBlinds": "8.08 BB",
+          "netRake": "4.32%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "€2.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "BetssonWilliam Hillbet-at-home"
+        }
+      },
+      {
+        "file": "SD_9_50_0.25-0.50.json",
+        "value": "50",
+        "data": {
+          "rank": "4",
+          "network": "iPoker Network",
+          "currency": "€3.83",
+          "bigBlinds": "7.66 BB",
+          "netRake": "4.10%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "€3.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "BetssonWilliam Hillbet-at-home"
+        }
+      },
+      {
+        "file": "SD_9_100_0.50-1.00.json",
+        "value": "100",
+        "data": {
+          "rank": "5",
+          "network": "iPoker Network",
+          "currency": "€7.02",
+          "bigBlinds": "7.02 BB",
+          "netRake": "3.69%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "€4.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "BetssonWilliam Hillbet-at-home"
+        }
+      },
+      {
+        "file": "SD_9_200_1.00-2.00.json",
+        "value": "200",
+        "data": {
+          "rank": "8",
+          "network": "iPoker Network",
+          "currency": "€9.97",
+          "bigBlinds": "4.98 BB",
+          "netRake": "2.80%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "€4.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "BetssonWilliam Hillbet-at-home"
+        }
+      },
+      {
+        "file": "SD_9_500_2.50-5.00.json",
+        "value": "500",
+        "data": {
+          "rank": "6",
+          "network": "iPoker Network",
+          "currency": "€16.18",
+          "bigBlinds": "3.24 BB",
+          "netRake": "1.82%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "€4.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "BetssonWilliam Hillbet-at-home"
+        }
+      }
+    ],
+    "name": "iPoker Network"
+  },
+  {
+    "network": [
+      {
+        "file": "SD_9_10_0.05-0.10.json",
+        "value": "10",
+        "data": {
+          "rank": "9",
+          "network": "JackPoker",
+          "currency": "$0.94",
+          "bigBlinds": "9.36 BB",
+          "netRake": "5.01%",
+          "rakePercentage": "5.50%",
+          "rakeCap": "$1.75 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "JackPoker"
+        }
+      },
+      {
+        "file": "SD_9_25_0.10-0.25.json",
+        "value": "25",
+        "data": {
+          "rank": "10",
+          "network": "JackPoker",
+          "currency": "$2.33",
+          "bigBlinds": "9.31 BB",
+          "netRake": "4.98%",
+          "rakePercentage": "5.50%",
+          "rakeCap": "$3.25 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "JackPoker"
+        }
+      },
+      {
+        "file": "SD_9_50_0.25-0.50.json",
+        "value": "50",
+        "data": {
+          "rank": "13",
+          "network": "JackPoker",
+          "currency": "$4.66",
+          "bigBlinds": "9.33 BB",
+          "netRake": "4.99%",
+          "rakePercentage": "5.50%",
+          "rakeCap": "$6.90 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "JackPoker"
+        }
+      },
+      {
+        "file": "SD_9_100_0.50-1.00.json",
+        "value": "100",
+        "data": {
+          "rank": "13",
+          "network": "JackPoker",
+          "currency": "$9.00",
+          "bigBlinds": "9.00 BB",
+          "netRake": "4.73%",
+          "rakePercentage": "5.50%",
+          "rakeCap": "$8.70 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "JackPoker"
+        }
+      },
+      {
+        "file": "SD_9_200_1.00-2.00.json",
+        "value": "200",
+        "data": {
+          "rank": "13",
+          "network": "JackPoker",
+          "currency": "$14.61",
+          "bigBlinds": "7.30 BB",
+          "netRake": "4.10%",
+          "rakePercentage": "5.50%",
+          "rakeCap": "$10.40 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "JackPoker"
+        }
+      },
+      {
+        "file": "SD_9_500_2.50-5.00.json",
+        "value": "500",
+        "data": {
+          "rank": "13",
+          "network": "JackPoker",
+          "currency": "$29.97",
+          "bigBlinds": "5.99 BB",
+          "netRake": "3.36%",
+          "rakePercentage": "5.50%",
+          "rakeCap": "$13.90 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "JackPoker"
+        }
+      }
+    ],
+    "name": "JackPoker"
+  },
+  {
+    "network": [
+      {
+        "file": "SD_9_10_0.05-0.10.json",
+        "value": "10",
+        "data": {
+          "rank": "5",
+          "network": "PaiWangLuo",
+          "currency": "$0.85",
+          "bigBlinds": "8.52 BB",
+          "netRake": "4.56%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$2.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "IgnitionBovadaBodog"
+        }
+      },
+      {
+        "file": "SD_9_25_0.10-0.25.json",
+        "value": "25",
+        "data": {
+          "rank": "4",
+          "network": "PaiWangLuo",
+          "currency": "$2.02",
+          "bigBlinds": "8.08 BB",
+          "netRake": "4.32%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$2.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "IgnitionBovadaBodog"
+        }
+      },
+      {
+        "file": "SD_9_50_0.25-0.50.json",
+        "value": "50",
+        "data": {
+          "rank": "6",
+          "network": "PaiWangLuo",
+          "currency": "$4.04",
+          "bigBlinds": "8.08 BB",
+          "netRake": "4.32%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$4.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "IgnitionBovadaBodog"
+        }
+      },
+      {
+        "file": "SD_9_100_0.50-1.00.json",
+        "value": "100",
+        "data": {
+          "rank": "5",
+          "network": "PaiWangLuo",
+          "currency": "$7.02",
+          "bigBlinds": "7.02 BB",
+          "netRake": "3.69%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$4.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "IgnitionBovadaBodog"
+        }
+      },
+      {
+        "file": "SD_9_200_1.00-2.00.json",
+        "value": "200",
+        "data": {
+          "rank": "8",
+          "network": "PaiWangLuo",
+          "currency": "$9.97",
+          "bigBlinds": "4.98 BB",
+          "netRake": "2.80%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$4.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "IgnitionBovadaBodog"
+        }
+      },
+      {
+        "file": "SD_9_500_2.50-5.00.json",
+        "value": "500",
+        "data": {
+          "rank": "6",
+          "network": "PaiWangLuo",
+          "currency": "$16.18",
+          "bigBlinds": "3.24 BB",
+          "netRake": "1.82%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$4.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "IgnitionBovadaBodog"
+        }
+      }
+    ],
+    "name": "PaiWangLuo"
+  },
+  {
+    "network": [
+      {
+        "file": "SD_9_10_0.05-0.10.json",
+        "value": "10",
+        "data": {
+          "rank": "3",
+          "network": "PokerStars",
+          "currency": "$0.77",
+          "bigBlinds": "7.66 BB",
+          "netRake": "4.10%",
+          "rakePercentage": "4.50%",
+          "rakeCap": "$1.50 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "PokerStars"
+        }
+      },
+      {
+        "file": "SD_9_25_0.10-0.25.json",
+        "value": "25",
+        "data": {
+          "rank": "2",
+          "network": "PokerStars",
+          "currency": "$1.85",
+          "bigBlinds": "7.40 BB",
+          "netRake": "3.96%",
+          "rakePercentage": "4.50%",
+          "rakeCap": "$2.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "PokerStars"
+        }
+      },
+      {
+        "file": "SD_9_50_0.25-0.50.json",
+        "value": "50",
+        "data": {
+          "rank": "2",
+          "network": "PokerStars",
+          "currency": "$3.47",
+          "bigBlinds": "6.95 BB",
+          "netRake": "3.72%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$2.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "PokerStars"
+        }
+      },
+      {
+        "file": "SD_9_100_0.50-1.00.json",
+        "value": "100",
+        "data": {
+          "rank": "2",
+          "network": "PokerStars",
+          "currency": "$6.02",
+          "bigBlinds": "6.02 BB",
+          "netRake": "3.16%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$2.50 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "PokerStars"
+        }
+      },
+      {
+        "file": "SD_9_200_1.00-2.00.json",
+        "value": "200",
+        "data": {
+          "rank": "1",
+          "network": "PokerStars",
+          "currency": "$8.49",
+          "bigBlinds": "4.24 BB",
+          "netRake": "2.38%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$2.75 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "PokerStars"
+        }
+      },
+      {
+        "file": "SD_9_500_2.50-5.00.json",
+        "value": "500",
+        "data": {
+          "rank": "1",
+          "network": "PokerStars",
+          "currency": "$13.69",
+          "bigBlinds": "2.74 BB",
+          "netRake": "1.54%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$3.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "PokerStars"
+        }
+      }
+    ],
+    "name": "PokerStars"
+  },
+  {
+    "network": [
+      {
+        "file": "SD_9_10_0.05-0.10.json",
+        "value": "10",
+        "data": {
+          "rank": "11",
+          "network": "PokerStars Europe",
+          "currency": "€1.01",
+          "bigBlinds": "10.08 BB",
+          "netRake": "5.39%",
+          "rakePercentage": "6.00%",
+          "rakeCap": "€1.25 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "PokerStars"
+        }
+      },
+      {
+        "file": "SD_9_25_0.10-0.25.json",
+        "value": "25",
+        "data": {
+          "rank": "11",
+          "network": "PokerStars Europe",
+          "currency": "€2.40",
+          "bigBlinds": "9.61 BB",
+          "netRake": "5.14%",
+          "rakePercentage": "5.75%",
+          "rakeCap": "€2.85 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "PokerStars"
+        }
+      },
+      {
+        "file": "SD_9_50_0.25-0.50.json",
+        "value": "50",
+        "data": {
+          "rank": "10",
+          "network": "PokerStars Europe",
+          "currency": "€4.27",
+          "bigBlinds": "8.54 BB",
+          "netRake": "4.57%",
+          "rakePercentage": "5.75%",
+          "rakeCap": "€3.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "PokerStars"
+        }
+      },
+      {
+        "file": "SD_9_100_0.50-1.00.json",
+        "value": "100",
+        "data": {
+          "rank": "9",
+          "network": "PokerStars Europe",
+          "currency": "€7.03",
+          "bigBlinds": "7.03 BB",
+          "netRake": "3.69%",
+          "rakePercentage": "5.75%",
+          "rakeCap": "€3.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "PokerStars"
+        }
+      },
+      {
+        "file": "SD_9_200_1.00-2.00.json",
+        "value": "200",
+        "data": {
+          "rank": "4",
+          "network": "PokerStars Europe",
+          "currency": "€9.53",
+          "bigBlinds": "4.76 BB",
+          "netRake": "2.67%",
+          "rakePercentage": "5.75%",
+          "rakeCap": "€3.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "PokerStars"
+        }
+      },
+      {
+        "file": "SD_9_500_2.50-5.00.json",
+        "value": "500",
+        "data": {
+          "rank": "3",
+          "network": "PokerStars Europe",
+          "currency": "€14.43",
+          "bigBlinds": "2.89 BB",
+          "netRake": "1.62%",
+          "rakePercentage": "5.75%",
+          "rakeCap": "€3.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "PokerStars"
+        }
+      }
+    ],
+    "name": "PokerStars Europe"
+  },
+  {
+    "network": [
+      {
+        "file": "SD_9_10_0.05-0.10.json",
+        "value": "10",
+        "data": {
+          "rank": "1",
+          "network": "",
+          "currency": "€0.51",
+          "bigBlinds": "5.12 BB",
+          "netRake": "2.74%",
+          "rakePercentage": "3.00%",
+          "rakeCap": "€2.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "Unibet"
+        }
+      },
+      {
+        "file": "SD_9_25_0.10-0.25.json",
+        "value": "25",
+        "data": {
+          "rank": "6",
+          "network": "",
+          "currency": "€2.12",
+          "bigBlinds": "8.47 BB",
+          "netRake": "4.53%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "€3.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "Unibet"
+        }
+      },
+      {
+        "file": "SD_9_50_0.25-0.50.json",
+        "value": "50",
+        "data": {
+          "rank": "9",
+          "network": "",
+          "currency": "€4.13",
+          "bigBlinds": "8.25 BB",
+          "netRake": "4.41%",
+          "rakePercentage": "5.50%",
+          "rakeCap": "€3.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "Unibet"
+        }
+      },
+      {
+        "file": "SD_9_100_0.50-1.00.json",
+        "value": "100",
+        "data": {
+          "rank": "11",
+          "network": "",
+          "currency": "€7.22",
+          "bigBlinds": "7.22 BB",
+          "netRake": "3.79%",
+          "rakePercentage": "6.00%",
+          "rakeCap": "€3.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "Unibet"
+        }
+      },
+      {
+        "file": "SD_9_200_1.00-2.00.json",
+        "value": "200",
+        "data": {
+          "rank": "6",
+          "network": "",
+          "currency": "€9.74",
+          "bigBlinds": "4.87 BB",
+          "netRake": "2.73%",
+          "rakePercentage": "6.00%",
+          "rakeCap": "€3.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "Unibet"
+        }
+      },
+      {
+        "file": "SD_9_500_2.50-5.00.json",
+        "value": "500",
+        "data": {
+          "rank": "5",
+          "network": "",
+          "currency": "€14.65",
+          "bigBlinds": "2.93 BB",
+          "netRake": "1.64%",
+          "rakePercentage": "6.00%",
+          "rakeCap": "€3.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "Unibet"
+        }
+      }
+    ],
+    "name": "Unibet"
+  },
+  {
+    "network": [
+      {
+        "file": "SD_9_10_0.05-0.10.json",
+        "value": "10",
+        "data": {
+          "rank": "10",
+          "network": "",
+          "currency": "€0.98",
+          "bigBlinds": "9.76 BB",
+          "netRake": "5.22%",
+          "rakePercentage": "5.75%",
+          "rakeCap": "€1.50 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "Winamax.fr"
+        }
+      },
+      {
+        "file": "SD_9_25_0.10-0.25.json",
+        "value": "25",
+        "data": {
+          "rank": "12",
+          "network": "",
+          "currency": "€2.42",
+          "bigBlinds": "9.66 BB",
+          "netRake": "5.17%",
+          "rakePercentage": "5.75%",
+          "rakeCap": "€3.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "Winamax.fr"
+        }
+      },
+      {
+        "file": "SD_9_50_0.25-0.50.json",
+        "value": "50",
+        "data": {
+          "rank": "10",
+          "network": "",
+          "currency": "€4.27",
+          "bigBlinds": "8.54 BB",
+          "netRake": "4.57%",
+          "rakePercentage": "5.75%",
+          "rakeCap": "€3.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "Winamax.fr"
+        }
+      },
+      {
+        "file": "SD_9_100_0.50-1.00.json",
+        "value": "100",
+        "data": {
+          "rank": "9",
+          "network": "",
+          "currency": "€7.03",
+          "bigBlinds": "7.03 BB",
+          "netRake": "3.69%",
+          "rakePercentage": "5.75%",
+          "rakeCap": "€3.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "Winamax.fr"
+        }
+      },
+      {
+        "file": "SD_9_200_1.00-2.00.json",
+        "value": "200",
+        "data": {
+          "rank": "4",
+          "network": "",
+          "currency": "€9.53",
+          "bigBlinds": "4.76 BB",
+          "netRake": "2.67%",
+          "rakePercentage": "5.75%",
+          "rakeCap": "€3.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "Winamax.fr"
+        }
+      },
+      {
+        "file": "SD_9_500_2.50-5.00.json",
+        "value": "500",
+        "data": {
+          "rank": "3",
+          "network": "",
+          "currency": "€14.43",
+          "bigBlinds": "2.89 BB",
+          "netRake": "1.62%",
+          "rakePercentage": "5.75%",
+          "rakeCap": "€3.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "Winamax.fr"
+        }
+      }
+    ],
+    "name": "Winamax.fr"
+  },
+  {
+    "network": [
+      {
+        "file": "SD_9_10_0.05-0.10.json",
+        "value": "10",
+        "data": {
+          "rank": "7",
+          "network": "Winning Poker",
+          "currency": "$0.85",
+          "bigBlinds": "8.53 BB",
+          "netRake": "4.56%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$3.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "Americas CardroomBlack Chip Poker"
+        }
+      },
+      {
+        "file": "SD_9_25_0.10-0.25.json",
+        "value": "25",
+        "data": {
+          "rank": "6",
+          "network": "Winning Poker",
+          "currency": "$2.12",
+          "bigBlinds": "8.47 BB",
+          "netRake": "4.53%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$3.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "Americas CardroomBlack Chip Poker"
+        }
+      },
+      {
+        "file": "SD_9_50_0.25-0.50.json",
+        "value": "50",
+        "data": {
+          "rank": "4",
+          "network": "Winning Poker",
+          "currency": "$3.83",
+          "bigBlinds": "7.66 BB",
+          "netRake": "4.10%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$3.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "Americas CardroomBlack Chip Poker"
+        }
+      },
+      {
+        "file": "SD_9_100_0.50-1.00.json",
+        "value": "100",
+        "data": {
+          "rank": "4",
+          "network": "Winning Poker",
+          "currency": "$6.41",
+          "bigBlinds": "6.41 BB",
+          "netRake": "3.37%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$3.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "Americas CardroomBlack Chip Poker"
+        }
+      },
+      {
+        "file": "SD_9_200_1.00-2.00.json",
+        "value": "200",
+        "data": {
+          "rank": "2",
+          "network": "Winning Poker",
+          "currency": "$8.83",
+          "bigBlinds": "4.41 BB",
+          "netRake": "2.48%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$3.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "Americas CardroomBlack Chip Poker"
+        }
+      },
+      {
+        "file": "SD_9_500_2.50-5.00.json",
+        "value": "500",
+        "data": {
+          "rank": "1",
+          "network": "Winning Poker",
+          "currency": "$13.69",
+          "bigBlinds": "2.74 BB",
+          "netRake": "1.54%",
+          "rakePercentage": "5.00%",
+          "rakeCap": "$3.00 cap",
+          "rule": "No flop no drop (rake is taken only when the hand goes to a flop)",
+          "operators": "Americas CardroomBlack Chip Poker"
+        }
+      }
+    ],
+    "name": "Winning Poker"
+  }
+]

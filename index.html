@@ -130,7 +130,7 @@
 <body>
   <div id="app">
 
-    <h2>Net Thang cu Tai Comparison</h2>
+    <h2>Net Rake Comparison</h2>
 
     <!-- Lựa chọn phía trên -->
     <div class="options">
@@ -235,8 +235,8 @@
               <rect x="45" y="110" width="810" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect>
             </g>
             <g>
-              <rect  x="57" y="170" width="39" height="254" stroke="#7fff80" stroke-width="1" fill="#7fff80"></rect>
-              <rect x="120" y="163" width="38" height="261" stroke="#96ff80" stroke-width="1" fill="#96ff80"></rect>
+              <rect  v-for="(item, index) in data" :key="item.rank" :x="57 +index*62" :y="item.y" width="39" :height="item.height" stroke="#7fff80" stroke-width="1" fill="#7fff80"></rect>
+              <!-- <rect x="120" y="163" width="38" height="261" stroke="#96ff80" stroke-width="1" fill="#96ff80"></rect>
               <rect x="182" y="148" width="38" height="276" stroke="#c7ff80" stroke-width="1" fill="#c7ff80"></rect>
               <rect x="244" y="148" width="39" height="276" stroke="#c7ff80" stroke-width="1" fill="#c7ff80"></rect>
               <rect x="306" y="135" width="39" height="289" stroke="#f3ff80" stroke-width="1" fill="#f3ff80"></rect>
@@ -247,191 +247,33 @@
               <rect x="617" y="115" width="39" height="309" stroke="#ffca80" stroke-width="1" fill="#ffca80"></rect>
               <rect x="680" y="115" width="38" height="309" stroke="#ffca80" stroke-width="1" fill="#ffca80"></rect>
               <rect x="742" y="115" width="38" height="309" stroke="#ffc980" stroke-width="1" fill="#ffc980"></rect>
-              <rect x="804" y="92" width="39" height="332" stroke="#ff7f80" stroke-width="1" fill="#ff7f80"></rect>
+              <rect x="804" y="92" width="39" height="332" stroke="#ff7f80" stroke-width="1" fill="#ff7f80"></rect> -->
             </g>
             <g>
               <rect x="45" y="424" width="810" height="1" stroke="none" stroke-width="0" fill="#333333"></rect>
             </g>
             <g>
-              <rect x="76" y="158" width="1" height="12" stroke="none" stroke-width="0" fill="#999999"></rect>
-              <rect x="139" y="151" width="1" height="12" stroke="none" stroke-width="0" fill="#999999"></rect>
-              <rect x="201" y="136" width="1" height="12" stroke="none" stroke-width="0" fill="#999999"></rect>
-              <rect x="263" y="136" width="1" height="12" stroke="none" stroke-width="0" fill="#999999"></rect>
-              <rect x="325" y="123" width="1" height="12" stroke="none" stroke-width="0" fill="#999999"></rect>
-              <rect x="388" y="123" width="1" height="12" stroke="none" stroke-width="0" fill="#999999"></rect>
-              <rect x="450" y="123" width="1" height="12" stroke="none" stroke-width="0" fill="#999999"></rect>
-              <rect x="512" y="114" width="1" height="12" stroke="none" stroke-width="0" fill="#999999"></rect>
-              <rect x="574" y="103" width="1" height="12" stroke="none" stroke-width="0" fill="#999999"></rect>
-              <rect x="636" y="103" width="1" height="12" stroke="none" stroke-width="0" fill="#999999"></rect>
-              <rect x="699" y="103" width="1" height="12" stroke="none" stroke-width="0" fill="#999999"></rect>
-              <rect x="761" y="103" width="1" height="12" stroke="none" stroke-width="0" fill="#999999"></rect>
-              <rect x="823" y="92" width="1" height="12" stroke="none" stroke-width="0" fill="#999999"></rect>
+              <rect v-for="(item, index) in data"  :x="76 +index*62" :y="item.y-13" width="1" height="12" stroke="none" stroke-width="0" fill="#999999"></rect>
+  
             </g>
           </g>
           <g></g>
           <g>
-            <g><text text-anchor="end" x="79.06538461538462" y="438.24352447854375" font-family="Arial" font-size="14"
-                transform="rotate(-30 79.06538461538462 438.24352447854375)" stroke="none" stroke-width="0"
-                fill="#222222">PokerStars</text></g>
-            <g><text text-anchor="end" x="141.29615384615386" y="438.24352447854375" font-family="Arial" font-size="14"
-                transform="rotate(-30 141.29615384615386 438.24352447854375)" stroke="none" stroke-width="0"
-                fill="#222222">CoinPoker</text></g>
-            <g><text text-anchor="end" x="203.52692307692308" y="438.24352447854375" font-family="Arial" font-size="14"
-                transform="rotate(-30 203.52692307692308 438.24352447854375)" stroke="none" stroke-width="0"
-                fill="#222222">iPoker Network</text></g>
-            <g><text text-anchor="end" x="265.7576923076923" y="438.24352447854375" font-family="Arial" font-size="14"
-                transform="rotate(-30 265.7576923076923 438.24352447854375)" stroke="none" stroke-width="0"
-                fill="#222222">Winning Poker</text></g>
-            <g><text text-anchor="end" x="327.98846153846154" y="438.24352447854375" font-family="Arial" font-size="14"
-                transform="rotate(-30 327.98846153846154 438.24352447854375)" stroke="none" stroke-width="0"
-                fill="#222222">888Poker</text></g>
-            <g><text text-anchor="end" x="390.21923076923076" y="438.24352447854375" font-family="Arial" font-size="14"
-                transform="rotate(-30 390.21923076923076 438.24352447854375)" stroke="none" stroke-width="0"
-                fill="#222222">Horizon Poker</text></g>
-            <g><text text-anchor="end" x="452.45" y="438.24352447854375" font-family="Arial" font-size="14"
-                transform="rotate(-30 452.45 438.24352447854375)" stroke="none" stroke-width="0"
-                fill="#222222">PaiWangLuo</text></g>
-            <g><text text-anchor="end" x="514.6807692307693" y="438.24352447854375" font-family="Arial" font-size="14"
-                transform="rotate(-30 514.6807692307693 438.24352447854375)" stroke="none" stroke-width="0"
-                fill="#222222">Unibet</text></g>
-            <g><text text-anchor="end" x="576.9115384615385" y="438.24352447854375" font-family="Arial" font-size="14"
-                transform="rotate(-30 576.9115384615385 438.24352447854375)" stroke="none" stroke-width="0"
-                fill="#222222">GGPoker</text></g>
-            <g><text text-anchor="end" x="639.1423076923078" y="438.24352447854375" font-family="Arial" font-size="14"
-                transform="rotate(-30 639.1423076923078 438.24352447854375)" stroke="none" stroke-width="0"
-                fill="#222222">PokerStars Euro…</text>
-              <path
-                d="M531.8673354495284,486.4378221735089L633.1923076923077,427.93782217350895L640.1923076923077,440.06217782649105L538.8673354495284,498.562177826491Z"
-                stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></path>
-            </g>
-            <g><text text-anchor="end" x="701.373076923077" y="438.24352447854375" font-family="Arial" font-size="14"
-                transform="rotate(-30 701.373076923077 438.24352447854375)" stroke="none" stroke-width="0"
-                fill="#222222">Winamax.fr</text></g>
-            <g><text text-anchor="end" x="763.6038461538462" y="438.24352447854375" font-family="Arial" font-size="14"
-                transform="rotate(-30 763.6038461538462 438.24352447854375)" stroke="none" stroke-width="0"
-                fill="#222222">Chico Poker</text></g>
-            <g><text text-anchor="end" x="825.8346153846155" y="438.24352447854375" font-family="Arial" font-size="14"
-                transform="rotate(-30 825.8346153846155 438.24352447854375)" stroke="none" stroke-width="0"
-                fill="#222222">JackPoker</text></g>
+            <g v-for="(item, index) in data" ><text text-anchor="end" :x="79+ index*62" y="438.24352447854375" font-family="Arial" font-size="14"
+                  :transform="'rotate(-30 ' + (79 + index * 62) + ' 438.24352447854375)'" stroke="none" stroke-width="0"
+                fill="#222222">{{item.network}}</text></g>
           </g>
           <g>
-            <g>
+            <g v-for="(item, index) in data" :key="item.rank" >
               <g>
-                <rect x="53.5" y="143.5" width="46" height="16" stroke="none" stroke-width="0" fill-opacity="0"
-                  fill="#ffffff"></rect><text text-anchor="middle" x="76" y="155.9" font-family="Arial" font-size="14"
-                  stroke="none" stroke-width="0" fill="#59b35a">3.65%</text>
-                <rect x="56" y="144" width="40" height="14" stroke="none" stroke-width="0" fill-opacity="0"
+                <rect :x="53.5 + index*62" :y="item.y-13" width="46" height="16" stroke="none" stroke-width="0" fill-opacity="0"
+                  fill="#ffffff"></rect><text text-anchor="middle" :x="76 + index*62" :y="item.y-15" font-family="Arial" font-size="14"
+                  stroke="none" stroke-width="0" fill="#59b35a">{{ item.netRake }}</text>
+                <rect :x="56 + index*62" y="144" width="40" height="14" stroke="none" stroke-width="0" fill-opacity="0"
                   fill="#ffffff"></rect>
               </g>
             </g>
-            <g>
-              <g>
-                <rect x="116.5" y="136.5" width="46" height="16" stroke="none" stroke-width="0" fill-opacity="0"
-                  fill="#ffffff"></rect><text text-anchor="middle" x="139" y="148.9" font-family="Arial" font-size="14"
-                  stroke="none" stroke-width="0" fill="#69b35a">3.75%</text>
-                <rect x="119" y="137" width="40" height="14" stroke="none" stroke-width="0" fill-opacity="0"
-                  fill="#ffffff"></rect>
-              </g>
-            </g>
-            <g>
-              <g>
-                <rect x="178.5" y="121.5" width="46" height="16" stroke="none" stroke-width="0" fill-opacity="0"
-                  fill="#ffffff"></rect><text text-anchor="middle" x="201" y="133.9" font-family="Arial" font-size="14"
-                  stroke="none" stroke-width="0" fill="#8bb35a">3.96%</text>
-                <rect x="181" y="122" width="40" height="14" stroke="none" stroke-width="0" fill-opacity="0"
-                  fill="#ffffff"></rect>
-              </g>
-            </g>
-            <g>
-              <g>
-                <rect x="240.5" y="121.5" width="46" height="16" stroke="none" stroke-width="0" fill-opacity="0"
-                  fill="#ffffff"></rect><text text-anchor="middle" x="263" y="133.9" font-family="Arial" font-size="14"
-                  stroke="none" stroke-width="0" fill="#8bb35a">3.96%</text>
-                <rect x="243" y="122" width="40" height="14" stroke="none" stroke-width="0" fill-opacity="0"
-                  fill="#ffffff"></rect>
-              </g>
-            </g>
-            <g>
-              <g>
-                <rect x="302.5" y="108.5" width="46" height="16" stroke="none" stroke-width="0" fill-opacity="0"
-                  fill="#ffffff"></rect><text text-anchor="middle" x="325" y="120.9" font-family="Arial" font-size="14"
-                  stroke="none" stroke-width="0" fill="#aab35a">4.15%</text>
-                <rect x="305" y="109" width="40" height="14" stroke="none" stroke-width="0" fill-opacity="0"
-                  fill="#ffffff"></rect>
-              </g>
-            </g>
-            <g>
-              <g>
-                <rect x="365.5" y="108.5" width="46" height="16" stroke="none" stroke-width="0" fill-opacity="0"
-                  fill="#ffffff"></rect><text text-anchor="middle" x="388" y="120.9" font-family="Arial" font-size="14"
-                  stroke="none" stroke-width="0" fill="#aab35a">4.15%</text>
-                <rect x="368" y="109" width="40" height="14" stroke="none" stroke-width="0" fill-opacity="0"
-                  fill="#ffffff"></rect>
-              </g>
-            </g>
-            <g>
-              <g>
-                <rect x="427.5" y="108.5" width="46" height="16" stroke="none" stroke-width="0" fill-opacity="0"
-                  fill="#ffffff"></rect><text text-anchor="middle" x="450" y="120.9" font-family="Arial" font-size="14"
-                  stroke="none" stroke-width="0" fill="#aab35a">4.15%</text>
-                <rect x="430" y="109" width="40" height="14" stroke="none" stroke-width="0" fill-opacity="0"
-                  fill="#ffffff"></rect>
-              </g>
-            </g>
-            <g>
-              <g>
-                <rect x="489.5" y="99.5" width="46" height="16" stroke="none" stroke-width="0" fill-opacity="0"
-                  fill="#ffffff"></rect><text text-anchor="middle" x="512" y="111.9" font-family="Arial" font-size="14"
-                  stroke="none" stroke-width="0" fill="#b3a75a">4.28%</text>
-                <rect x="492" y="100" width="40" height="14" stroke="none" stroke-width="0" fill-opacity="0"
-                  fill="#ffffff"></rect>
-              </g>
-            </g>
-            <g>
-              <g>
-                <rect x="551.5" y="88.5" width="46" height="16" stroke="none" stroke-width="0" fill-opacity="0"
-                  fill="#ffffff"></rect><text text-anchor="middle" x="574" y="100.9" font-family="Arial" font-size="14"
-                  stroke="none" stroke-width="0" fill="#b38e5a">4.44%</text>
-                <rect x="554" y="89" width="40" height="14" stroke="none" stroke-width="0" fill-opacity="0"
-                  fill="#ffffff"></rect>
-              </g>
-            </g>
-            <g>
-              <g>
-                <rect x="613.5" y="88.5" width="46" height="16" stroke="none" stroke-width="0" fill-opacity="0"
-                  fill="#ffffff"></rect><text text-anchor="middle" x="636" y="100.9" font-family="Arial" font-size="14"
-                  stroke="none" stroke-width="0" fill="#b38d5a">4.44%</text>
-                <rect x="616" y="89" width="40" height="14" stroke="none" stroke-width="0" fill-opacity="0"
-                  fill="#ffffff"></rect>
-              </g>
-            </g>
-            <g>
-              <g>
-                <rect x="676.5" y="88.5" width="46" height="16" stroke="none" stroke-width="0" fill-opacity="0"
-                  fill="#ffffff"></rect><text text-anchor="middle" x="699" y="100.9" font-family="Arial" font-size="14"
-                  stroke="none" stroke-width="0" fill="#b38d5a">4.44%</text>
-                <rect x="679" y="89" width="40" height="14" stroke="none" stroke-width="0" fill-opacity="0"
-                  fill="#ffffff"></rect>
-              </g>
-            </g>
-            <g>
-              <g>
-                <rect x="738.5" y="88.5" width="46" height="16" stroke="none" stroke-width="0" fill-opacity="0"
-                  fill="#ffffff"></rect><text text-anchor="middle" x="761" y="100.9" font-family="Arial" font-size="14"
-                  stroke="none" stroke-width="0" fill="#b38d5a">4.44%</text>
-                <rect x="741" y="89" width="40" height="14" stroke="none" stroke-width="0" fill-opacity="0"
-                  fill="#ffffff"></rect>
-              </g>
-            </g>
-            <g>
-              <g>
-                <rect x="800.5" y="103.5" width="46" height="16" stroke="none" stroke-width="0" fill-opacity="0"
-                  fill="#ffffff"></rect><text text-anchor="middle" x="823" y="115.9" font-family="Arial" font-size="14"
-                  stroke="none" stroke-width="0" fill="#b3595a">4.77%</text>
-                <rect x="803" y="104" width="40" height="14" stroke="none" stroke-width="0" fill-opacity="0"
-                  fill="#ffffff"></rect>
-              </g>
-            </g>
+            
           </g>
         </g>
         <g></g>
@@ -446,23 +288,23 @@
     <div class="options">
       <!-- Tabs -->
       <div class="tabs">
-        <div @click="handleClicktype(item)" v-for="item in listtype" :key="item"
-          :class="type ==item ?'active tab':'tab'">{{object[item]}}</div>
+        <div @click="handleClicktype2(item)" v-for="item in listtype2" :key="item"
+          :class="type3 ==item ?'active tab':'tab'">{{object[item]}}</div>
 
       </div>
 
       <!-- Players -->
       <div class="players">
         <span>Players:</span>
-        <button @click="handleClick(item)" v-for="item in listplayers" :key="item"
-          :class="players ==item ?'active':''">{{item}}</button>
+        <button @click="handleClick2(item)" v-for="item in listplayers" :key="item"
+          :class="players2 ==item ?'active':''">{{item}}</button>
 
       </div>
 
       <!-- Stake -->
       <div class="stake">
         <div class="tabs">
-          <div @click="handleClicktype3(item)" v-for="item in list_" :key="item"
+          <div @click="handleClicktype3stake(item)" v-for="item in list_" :key="item"
             :class="type2 ==item ?'active tab':'tab'">{{item}}</div>
 
         </div>
@@ -470,8 +312,8 @@
     </div>
     <div id="rake_overview" class="">
       <table class="prime-table highlight-first-column rake-overview rake-in-bb">
-        <caption>Online poker rake overview for NLH (6 players)<br>Green: Top 20% of networks for that limit, Red:
-          Bottom 20% of networks for that limit.</caption>
+        <!-- <caption>Online poker rake overview for NLH ({{players2}} players)<br>Green: Top 20% of networks for that limit, Red:
+          Bottom 20% of networks for that limit.</caption> -->
         <thead>
           <tr>
             <th>Network \ Limit</th>
@@ -759,11 +601,13 @@
     data() {
       return {
         players: 6,
+        players2:6,
         type2: "Rake / 100 hands",
         list_: ["Rake / 100 hands", "Net Rake", "Formal Rake"],
         selectedRake: 50,
         limit: "",
         type: "NHL",
+        type3:"NHL",
         object: {
           "NHL": "NHL",
           "PLO": "PLO",
@@ -771,6 +615,8 @@
           "SD": "Short Deck"
         },
         data: [],
+        datafullrake :[],
+        listtype2: ["NHL", "PLO", "FF", "SD"],
         listtype: ["NHL", "PLO", "FF", "SD"],
         listlimit: [],
         listplayers: ["2", "3", "4", "5", "6", "7", "8", "9"],
@@ -797,10 +643,16 @@
       reverseMessage() {
         this.message = this.message.split('').reverse().join('');
       },
+      handleClicktype2(data){
+        this.type3 = data
+      },
       handleClicktype(data) {
         this.type = data
         this.loaddata()
 
+      },
+      handleClick2(data){
+        this.players2 = data
       },
       handleClicktype3(data) {
         this.type2 = data
@@ -811,6 +663,19 @@
       },
       test() {
         this.loaddata()
+      },
+      getBarDimensions(percent) {
+        const MAX_PERCENT = 5.0;         // mốc phần trăm cao nhất
+        const MAX_HEIGHT = 348.48;       // chiều cao tương ứng với 5%
+        const BASE_Y = 424;              // gốc trục y của biểu đồ
+
+        const height = (percent / MAX_PERCENT) * MAX_HEIGHT;
+        const y = BASE_Y - height;
+
+        return {
+          y: Math.round(y),
+          height: Math.round(height)
+        };
       },
       loaddata() {
         let loc = this.rakeOptions.filter(e => e.value == this.selectedRake)
@@ -825,10 +690,28 @@
               if (!e.network) {
                 e.network = e.operators
               }
+              e.chart = e.netRake.replace('%', "")
+              e.value =parseFloat(e.chart) 
+              let kq = this.getBarDimensions(e.chart)
+              e.y=kq.y
+              e.height=kq.height
+
               return e
-            })
+            }).sort((a, b) => a.value - b.value);
+            console.log(this.data)
           })
           .catch(error => console.error('Lỗi khi load JSON:', error));
+      },
+      loadfullrake(){
+         fetch("https://qc-code.github.io/data3/NHL_6.json")
+          .then(response => response.json())
+          .then(data => {
+            this.datafullrake = data
+            console.log(this.datafullrake)
+       
+          })
+          .catch(error => console.error('Lỗi khi load JSON:', error));
+
       }
     },
     mounted() {
@@ -836,6 +719,7 @@
       // console.log('ajaja', data2)
       //   console.log('Component đã render xong DOM' ,data2);
       this.loaddata()
+      this.loadfullrake()
     }
   }).mount('#app');
 </script>
