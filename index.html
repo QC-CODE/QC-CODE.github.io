@@ -11,6 +11,14 @@
       padding: 20px;
     }
 
+    .column span {
+      /* display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; */
+      display: block;
+    }
+
     h2 {
       text-align: center;
       margin-bottom: 20px;
@@ -235,7 +243,8 @@
               <rect x="45" y="110" width="810" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect>
             </g>
             <g>
-              <rect  v-for="(item, index) in data" :key="item.rank" :x="57 +index*62" :y="item.y" width="39" :height="item.height" stroke="#7fff80" stroke-width="1" fill="#7fff80"></rect>
+              <rect v-for="(item, index) in data" :key="item.rank" :x="57 +index*62" :y="item.y" width="39"
+                :height="item.height" stroke="#7fff80" stroke-width="1" fill="#7fff80"></rect>
               <!-- <rect x="120" y="163" width="38" height="261" stroke="#96ff80" stroke-width="1" fill="#96ff80"></rect>
               <rect x="182" y="148" width="38" height="276" stroke="#c7ff80" stroke-width="1" fill="#c7ff80"></rect>
               <rect x="244" y="148" width="39" height="276" stroke="#c7ff80" stroke-width="1" fill="#c7ff80"></rect>
@@ -253,27 +262,30 @@
               <rect x="45" y="424" width="810" height="1" stroke="none" stroke-width="0" fill="#333333"></rect>
             </g>
             <g>
-              <rect v-for="(item, index) in data"  :x="76 +index*62" :y="item.y-13" width="1" height="12" stroke="none" stroke-width="0" fill="#999999"></rect>
-  
+              <rect v-for="(item, index) in data" :x="76 +index*62" :y="item.y-13" width="1" height="12" stroke="none"
+                stroke-width="0" fill="#999999"></rect>
+
             </g>
           </g>
           <g></g>
           <g>
-            <g v-for="(item, index) in data" ><text text-anchor="end" :x="79+ index*62" y="438.24352447854375" font-family="Arial" font-size="14"
-                  :transform="'rotate(-30 ' + (79 + index * 62) + ' 438.24352447854375)'" stroke="none" stroke-width="0"
+            <g v-for="(item, index) in data"><text text-anchor="end" :x="79+ index*62" y="438.24352447854375"
+                font-family="Arial" font-size="14"
+                :transform="'rotate(-30 ' + (79 + index * 62) + ' 438.24352447854375)'" stroke="none" stroke-width="0"
                 fill="#222222">{{item.network}}</text></g>
           </g>
           <g>
-            <g v-for="(item, index) in data" :key="item.rank" >
+            <g v-for="(item, index) in data" :key="item.rank">
               <g>
-                <rect :x="53.5 + index*62" :y="item.y-13" width="46" height="16" stroke="none" stroke-width="0" fill-opacity="0"
-                  fill="#ffffff"></rect><text text-anchor="middle" :x="76 + index*62" :y="item.y-15" font-family="Arial" font-size="14"
-                  stroke="none" stroke-width="0" fill="#59b35a">{{ item.netRake }}</text>
+                <rect :x="53.5 + index*62" :y="item.y-13" width="46" height="16" stroke="none" stroke-width="0"
+                  fill-opacity="0" fill="#ffffff"></rect><text text-anchor="middle" :x="76 + index*62" :y="item.y-15"
+                  font-family="Arial" font-size="14" stroke="none" stroke-width="0" fill="#59b35a">{{ item.netRake
+                  }}</text>
                 <rect :x="56 + index*62" y="144" width="40" height="14" stroke="none" stroke-width="0" fill-opacity="0"
                   fill="#ffffff"></rect>
               </g>
             </g>
-            
+
           </g>
         </g>
         <g></g>
@@ -305,7 +317,7 @@
       <div class="stake">
         <div class="tabs">
           <div @click="handleClicktype3stake(item)" v-for="item in list_" :key="item"
-            :class="type2 ==item ?'active tab':'tab'">{{item}}</div>
+            :class="dang ==item ?'active tab':'tab'">{{item}}</div>
 
         </div>
       </div>
@@ -326,264 +338,30 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+
+          <tr v-for="item in datafullrake" :key="item.name">
             <td class="rake-overview-network">
-              <div class="prime-network-logo-name"><a href="https://www.primedope.com/to-888"><img
-                    src="https://www.primedope.com/wp-content/uploads/888poker-logo-80x80-1.webp" alt="888Poker Logo"
-                    class="network-logo" height="40" width="40"></a><a
-                  href="https://www.primedope.com/to-888">888Poker</a></div>
+              <div class="prime-network-logo-name"><a href="https://www.primedope.com/to-888">{{item.name}}</a></div>
             </td>
-            <td class="neutral-background"><span class="rake-overview-currency">$0.89</span><span
-                class="rake-overview-bb">8.92 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">$2.23</span><span
-                class="rake-overview-bb">8.90 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">$4.21</span><span
-                class="rake-overview-bb">8.43 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">$7.66</span><span
-                class="rake-overview-bb">7.66 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">$10.71</span><span
-                class="rake-overview-bb">5.35 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">$18.27</span><span
-                class="rake-overview-bb">3.65 BB</span></td>
-          </tr>
-          <tr>
-            <td class="rake-overview-network">
-              <div class="prime-network-logo-name"><a href="https://www.primedope.com/to-tiger-gaming"><img
-                    src="https://www.primedope.com/wp-content/uploads/Chico-Poker-Network-Logo-40x40webp.webp"
-                    alt="Chico Poker Logo" class="network-logo" height="40" width="40"></a><a
-                  href="https://www.primedope.com/to-tiger-gaming">Chico Poker</a></div>
+            <!-- rake-overview-net-rake neutral-background   neutral-background-->
+
+            <td v-if="dang=='Rake / 100 hands'" v-for="element in item.network" class="column neutral-background">
+              <span class="rake-overview-currency">{{element.data.currency}} </span>
+              <span class="rake-overview-bb">({{ element.data.bigBlinds }} BB)</span>
             </td>
-            <td class="bad-background"><span class="rake-overview-currency">$1.11</span><span
-                class="rake-overview-bb">11.07 BB</span></td>
-            <td class="bad-background"><span class="rake-overview-currency">$2.65</span><span
-                class="rake-overview-bb">10.60 BB</span></td>
-            <td class="bad-background"><span class="rake-overview-currency">$4.51</span><span
-                class="rake-overview-bb">9.01 BB</span></td>
-            <td class="bad-background"><span class="rake-overview-currency">$8.29</span><span
-                class="rake-overview-bb">8.29 BB</span></td>
-            <td class="bad-background"><span class="rake-overview-currency">$11.46</span><span
-                class="rake-overview-bb">5.73 BB</span></td>
-            <td class="bad-background"><span class="rake-overview-currency">$24.92</span><span
-                class="rake-overview-bb">4.98 BB</span></td>
-          </tr>
-          <tr>
-            <td class="rake-overview-network">
-              <div class="prime-network-logo-name"><a href="https://www.primedope.com/to/coinpoker"><img
-                    src="https://www.primedope.com/wp-content/uploads/Coinpoker-Logo.webp" alt="CoinPoker Logo"
-                    class="network-logo" height="40" width="40"></a><a
-                  href="https://www.primedope.com/to/coinpoker">CoinPoker</a></div>
+            <td v-if="dang=='Net Rake'" v-for="element in item.network"
+              class="rake-overview-net-rake neutral-background">
+              {{ element.data.netRake }}
             </td>
-            <td class="neutral-background"><span class="rake-overview-currency">$0.84</span><span
-                class="rake-overview-bb">8.40 BB</span></td>
-            <td class="good-background"><span class="rake-overview-currency">$2.08</span><span
-                class="rake-overview-bb">8.30 BB</span></td>
-            <td class="good-background"><span class="rake-overview-currency">$3.80</span><span
-                class="rake-overview-bb">7.60 BB</span></td>
-            <td class="good-background"><span class="rake-overview-currency">$6.73</span><span
-                class="rake-overview-bb">6.73 BB</span></td>
-            <td class="good-background"><span class="rake-overview-currency">$9.63</span><span
-                class="rake-overview-bb">4.81 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">$20.28</span><span
-                class="rake-overview-bb">4.06 BB</span></td>
-          </tr>
-          <tr>
-            <td class="rake-overview-network">
-              <div class="prime-network-logo-name"><a href="https://www.primedope.com/to-ggpoker"><img
-                    src="https://www.primedope.com/wp-content/uploads/ggpoker-logo-40x40.webp" alt="GGPoker Logo"
-                    class="network-logo" height="40" width="40"></a><a
-                  href="https://www.primedope.com/to-ggpoker">GGPoker</a></div>
+
+            <td v-if="dang=='Formal Rake'" v-for="element in item.network" class="column neutral-background">
+              <span class="rake-overview-percentage">
+                {{ element.data.rakePercentage }}</span>
+              <span class="rake-overview-cap">{{ element.data.rakeCap }}</span>
             </td>
-            <td class="neutral-background"><span class="rake-overview-currency">$0.91</span><span
-                class="rake-overview-bb">9.10 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">$2.21</span><span
-                class="rake-overview-bb">8.83 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">$4.50</span><span
-                class="rake-overview-bb">9.00 BB</span></td>
-            <td class="bad-background"><span class="rake-overview-currency">$8.55</span><span
-                class="rake-overview-bb">8.55 BB</span></td>
-            <td class="bad-background"><span class="rake-overview-currency">$13.51</span><span
-                class="rake-overview-bb">6.76 BB</span></td>
-            <td class="bad-background"><span class="rake-overview-currency">$27.88</span><span
-                class="rake-overview-bb">5.58 BB</span></td>
           </tr>
-          <tr>
-            <td class="rake-overview-network">
-              <div class="prime-network-logo-name"><a href="https://www.primedope.com/to/juicy-stakes"><img
-                    src="https://www.primedope.com/wp-content/uploads/Horizon-Poker-Network-Logo-40x40.webp"
-                    alt="Horizon Poker Logo" class="network-logo" height="40" width="40"></a><a
-                  href="https://www.primedope.com/to/juicy-stakes">Horizon Poker</a></div>
-            </td>
-            <td class="neutral-background"><span class="rake-overview-currency">$0.89</span><span
-                class="rake-overview-bb">8.91 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">$2.21</span><span
-                class="rake-overview-bb">8.85 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">$4.21</span><span
-                class="rake-overview-bb">8.43 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">$7.66</span><span
-                class="rake-overview-bb">7.66 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">$10.71</span><span
-                class="rake-overview-bb">5.35 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">$18.27</span><span
-                class="rake-overview-bb">3.65 BB</span></td>
-          </tr>
-          <tr>
-            <td class="rake-overview-network">
-              <div class="prime-network-logo-name"><a href="https://www.primedope.com/to-betsson"><img
-                    src="https://www.primedope.com/wp-content/uploads/ipoker logo 40x40.webp" alt="iPoker Network Logo"
-                    class="network-logo" height="40" width="40"></a><a
-                  href="https://www.primedope.com/to-betsson">iPoker Network</a></div>
-            </td>
-            <td class="bad-background"><span class="rake-overview-currency">€1.19</span><span
-                class="rake-overview-bb">11.87 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">€2.12</span><span
-                class="rake-overview-bb">8.48 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">€4.02</span><span
-                class="rake-overview-bb">8.04 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">€7.66</span><span
-                class="rake-overview-bb">7.66 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">€10.71</span><span
-                class="rake-overview-bb">5.35 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">€18.27</span><span
-                class="rake-overview-bb">3.65 BB</span></td>
-          </tr>
-          <tr>
-            <td class="rake-overview-network">
-              <div class="prime-network-logo-name"><a href="https://www.primedope.com/to/jackpoker"><img
-                    src="https://www.primedope.com/wp-content/uploads/jackPoker-Logo-80x80-1.webp" alt="JackPoker Logo"
-                    class="network-logo" height="40" width="40"></a><a
-                  href="https://www.primedope.com/to/jackpoker">JackPoker</a></div>
-            </td>
-            <td class="neutral-background"><span class="rake-overview-currency">$0.98</span><span
-                class="rake-overview-bb">9.79 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">$2.43</span><span
-                class="rake-overview-bb">9.73 BB</span></td>
-            <td class="bad-background"><span class="rake-overview-currency">$4.84</span><span
-                class="rake-overview-bb">9.68 BB</span></td>
-            <td class="bad-background"><span class="rake-overview-currency">$9.57</span><span
-                class="rake-overview-bb">9.57 BB</span></td>
-            <td class="bad-background"><span class="rake-overview-currency">$15.10</span><span
-                class="rake-overview-bb">7.55 BB</span></td>
-            <td class="bad-background"><span class="rake-overview-currency">$31.82</span><span
-                class="rake-overview-bb">6.36 BB</span></td>
-          </tr>
-          <tr>
-            <td class="rake-overview-network">
-              <div class="prime-network-logo-name"><a href="https://www.primedope.com/to/ignition"><img
-                    src="https://www.primedope.com/wp-content/uploads/PaiWangLuo-Network-Logo-40x40.webp"
-                    alt="PaiWangLuo Logo" class="network-logo" height="40" width="40"></a><a
-                  href="https://www.primedope.com/to/ignition">PaiWangLuo</a></div>
-            </td>
-            <td class="neutral-background"><span class="rake-overview-currency">$0.89</span><span
-                class="rake-overview-bb">8.91 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">$2.12</span><span
-                class="rake-overview-bb">8.48 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">$4.21</span><span
-                class="rake-overview-bb">8.43 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">$7.66</span><span
-                class="rake-overview-bb">7.66 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">$10.71</span><span
-                class="rake-overview-bb">5.35 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">$18.27</span><span
-                class="rake-overview-bb">3.65 BB</span></td>
-          </tr>
-          <tr>
-            <td class="rake-overview-network">
-              <div class="prime-network-logo-name"><a href="https://www.primedope.com/to-pokerstars"><img
-                    src="https://www.primedope.com/wp-content/uploads/PokerStars-Logo-40x40.webp" alt="PokerStars Logo"
-                    class="network-logo" height="40" width="40"></a><a
-                  href="https://www.primedope.com/to-pokerstars">PokerStars</a></div>
-            </td>
-            <td class="good-background"><span class="rake-overview-currency">$0.80</span><span
-                class="rake-overview-bb">8.01 BB</span></td>
-            <td class="good-background"><span class="rake-overview-currency">$1.94</span><span
-                class="rake-overview-bb">7.75 BB</span></td>
-            <td class="good-background"><span class="rake-overview-currency">$3.70</span><span
-                class="rake-overview-bb">7.40 BB</span></td>
-            <td class="good-background"><span class="rake-overview-currency">$6.73</span><span
-                class="rake-overview-bb">6.73 BB</span></td>
-            <td class="good-background"><span class="rake-overview-currency">$9.30</span><span
-                class="rake-overview-bb">4.65 BB</span></td>
-            <td class="good-background"><span class="rake-overview-currency">$15.75</span><span
-                class="rake-overview-bb">3.15 BB</span></td>
-          </tr>
-          <tr>
-            <td class="rake-overview-network">
-              <div class="prime-network-logo-name"><a href="https://www.primedope.com/to-pokerstars"><img
-                    src="https://www.primedope.com/wp-content/uploads/PokerStars-Logo-40x40.webp"
-                    alt="PokerStars Europe Logo" class="network-logo" height="40" width="40"></a><a
-                  href="https://www.primedope.com/to-pokerstars">PokerStars Europe</a></div>
-            </td>
-            <td class="bad-background"><span class="rake-overview-currency">€1.05</span><span
-                class="rake-overview-bb">10.54 BB</span></td>
-            <td class="bad-background"><span class="rake-overview-currency">€2.51</span><span
-                class="rake-overview-bb">10.06 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">€4.50</span><span
-                class="rake-overview-bb">9.01 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">€7.84</span><span
-                class="rake-overview-bb">7.84 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">€10.46</span><span
-                class="rake-overview-bb">5.23 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">€16.75</span><span
-                class="rake-overview-bb">3.35 BB</span></td>
-          </tr>
-          <tr>
-            <td class="rake-overview-network">
-              <div class="prime-network-logo-name"><span><img
-                    src="https://www.primedope.com/wp-content/uploads/Unibet-Logo.webp" alt="Unibet Logo"
-                    class="network-logo" height="40" width="40"></span><span>Unibet</span></div>
-            </td>
-            <td class="good-background"><span class="rake-overview-currency">€0.54</span><span
-                class="rake-overview-bb">5.35 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">€2.21</span><span
-                class="rake-overview-bb">8.85 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">€4.35</span><span
-                class="rake-overview-bb">8.69 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">€8.08</span><span
-                class="rake-overview-bb">8.08 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">€10.73</span><span
-                class="rake-overview-bb">5.36 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">€17.06</span><span
-                class="rake-overview-bb">3.41 BB</span></td>
-          </tr>
-          <tr>
-            <td class="rake-overview-network">
-              <div class="prime-network-logo-name"><span><img
-                    src="https://www.primedope.com/wp-content/uploads/Winamax-Logo-80x80-1.webp" alt="Winamax.fr Logo"
-                    class="network-logo" height="40" width="40"></span><span>Winamax.fr</span></div>
-            </td>
-            <td class="neutral-background"><span class="rake-overview-currency">€1.02</span><span
-                class="rake-overview-bb">10.20 BB</span></td>
-            <td class="bad-background"><span class="rake-overview-currency">€2.53</span><span
-                class="rake-overview-bb">10.11 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">€4.50</span><span
-                class="rake-overview-bb">9.01 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">€7.84</span><span
-                class="rake-overview-bb">7.84 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">€10.46</span><span
-                class="rake-overview-bb">5.23 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">€16.75</span><span
-                class="rake-overview-bb">3.35 BB</span></td>
-          </tr>
-          <tr>
-            <td class="rake-overview-network">
-              <div class="prime-network-logo-name"><a href="https://www.primedope.com/to-acr"><img
-                    src="https://www.primedope.com/wp-content/uploads/Winning-Poker-Network-Logo-40x40.webp"
-                    alt="Winning Poker Logo" class="network-logo" height="40" width="40"></a><a
-                  href="https://www.primedope.com/to-acr">Winning Poker</a></div>
-            </td>
-            <td class="neutral-background"><span class="rake-overview-currency">$0.89</span><span
-                class="rake-overview-bb">8.92 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">$2.21</span><span
-                class="rake-overview-bb">8.85 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">$4.02</span><span
-                class="rake-overview-bb">8.04 BB</span></td>
-            <td class="neutral-background"><span class="rake-overview-currency">$7.10</span><span
-                class="rake-overview-bb">7.10 BB</span></td>
-            <td class="good-background"><span class="rake-overview-currency">$9.63</span><span
-                class="rake-overview-bb">4.81 BB</span></td>
-            <td class="good-background"><span class="rake-overview-currency">$15.75</span><span
-                class="rake-overview-bb">3.15 BB</span></td>
-          </tr>
+
+
         </tbody>
       </table>
     </div>
@@ -601,13 +379,13 @@
     data() {
       return {
         players: 6,
-        players2:6,
-        type2: "Rake / 100 hands",
+        players2: 6,
+        dang: "Rake / 100 hands",
         list_: ["Rake / 100 hands", "Net Rake", "Formal Rake"],
         selectedRake: 50,
         limit: "",
         type: "NHL",
-        type3:"NHL",
+        type3: "NHL",
         object: {
           "NHL": "NHL",
           "PLO": "PLO",
@@ -615,10 +393,11 @@
           "SD": "Short Deck"
         },
         data: [],
-        datafullrake :[],
+        datafullrake: [],
         listtype2: ["NHL", "PLO", "FF", "SD"],
         listtype: ["NHL", "PLO", "FF", "SD"],
         listlimit: [],
+
         listplayers: ["2", "3", "4", "5", "6", "7", "8", "9"],
         rakeOptions: [
           { value: "2", text: "0.01-0.02" },
@@ -643,20 +422,23 @@
       reverseMessage() {
         this.message = this.message.split('').reverse().join('');
       },
-      handleClicktype2(data){
+      handleClicktype3stake(data) {
+        this.dang = data
+      },
+      handleClicktype2(data) {
         this.type3 = data
+        this.loadfullrake()
       },
       handleClicktype(data) {
         this.type = data
         this.loaddata()
 
       },
-      handleClick2(data){
+      handleClick2(data) {
         this.players2 = data
+        this.loadfullrake()
       },
-      handleClicktype3(data) {
-        this.type2 = data
-      },
+
       handleClick(data) {
         this.players = data
         this.loaddata()
@@ -691,10 +473,10 @@
                 e.network = e.operators
               }
               e.chart = e.netRake.replace('%', "")
-              e.value =parseFloat(e.chart) 
+              e.value = parseFloat(e.chart)
               let kq = this.getBarDimensions(e.chart)
-              e.y=kq.y
-              e.height=kq.height
+              e.y = kq.y
+              e.height = kq.height
 
               return e
             }).sort((a, b) => a.value - b.value);
@@ -702,13 +484,14 @@
           })
           .catch(error => console.error('Lỗi khi load JSON:', error));
       },
-      loadfullrake(){
-         fetch("https://qc-code.github.io/data3/NHL_6.json")
+      loadfullrake() {
+        let url = "https://qc-code.github.io/data3/" + this.type3 + "_" + this.players2 + ".json"
+        fetch(url)
           .then(response => response.json())
           .then(data => {
             this.datafullrake = data
             console.log(this.datafullrake)
-       
+
           })
           .catch(error => console.error('Lỗi khi load JSON:', error));
 
