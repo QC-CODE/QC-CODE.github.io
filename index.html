@@ -182,7 +182,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="item in data" :key="item.rank">
+        <!-- v-for="(item, index) in data" :key="item.id || index" -->
+        <tr v-for="(item, index) in data" :key="index">
           <td class="rank">{{item.rank}}</td>
           <td class="network">{{item.network}}</td>
           <td>{{item.currency}} ( {{item.bigBlinds}} )</td>
@@ -397,7 +398,12 @@
         listtype2: ["NHL", "PLO", "FF", "SD"],
         listtype: ["NHL", "PLO", "FF", "SD"],
         listlimit: [],
-
+//         #0f8181
+// #139f9f
+// #cbd902
+// #d9d902
+// #ffa600
+// #ffa600
         listplayers: ["2", "3", "4", "5", "6", "7", "8", "9"],
         rakeOptions: [
           { value: "2", text: "0.01-0.02" },
@@ -468,6 +474,7 @@
         fetch(url)
           .then(response => response.json())
           .then(data => {
+            let sott=1
             this.data = data.map(e => {
               if (!e.network) {
                 e.network = e.operators
@@ -479,7 +486,7 @@
               e.height = kq.height
 
               return e
-            }).sort((a, b) => a.value - b.value);
+            }).sort((a, b) => a.value - b.value)
             console.log(this.data)
           })
           .catch(error => console.error('Lỗi khi load JSON:', error));
