@@ -244,7 +244,7 @@
               <rect x="45" y="110" width="810" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect>
             </g>
             <g>
-              <rect v-for="(item, index) in data" :key="item.rank" :x="57 +index*62" :y="item.y" width="39"
+              <rect v-for="(item, index) in data" :key="item.index" :x="57 +index*62" :y="item.y" width="39"
                 :height="item.height" stroke="#7fff80" stroke-width="1" fill="#7fff80"></rect>
               <!-- <rect x="120" y="163" width="38" height="261" stroke="#96ff80" stroke-width="1" fill="#96ff80"></rect>
               <rect x="182" y="148" width="38" height="276" stroke="#c7ff80" stroke-width="1" fill="#c7ff80"></rect>
@@ -263,20 +263,20 @@
               <rect x="45" y="424" width="810" height="1" stroke="none" stroke-width="0" fill="#333333"></rect>
             </g>
             <g>
-              <rect v-for="(item, index) in data" :x="76 +index*62" :y="item.y-13" width="1" height="12" stroke="none"
+              <rect v-for="(item, index) in data" :key="item.index"  :x="76 +index*62" :y="item.y-13" width="1" height="12" stroke="none"
                 stroke-width="0" fill="#999999"></rect>
 
             </g>
           </g>
           <g></g>
           <g>
-            <g v-for="(item, index) in data"><text text-anchor="end" :x="79+ index*62" y="438.24352447854375"
+            <g v-for="(item, index) in data" :key="item.index"><text text-anchor="end" :x="79+ index*62" y="438.24352447854375"
                 font-family="Arial" font-size="14"
                 :transform="'rotate(-30 ' + (79 + index * 62) + ' 438.24352447854375)'" stroke="none" stroke-width="0"
                 fill="#222222">{{item.network}}</text></g>
           </g>
           <g>
-            <g v-for="(item, index) in data" :key="item.rank">
+            <g v-for="(item, index) in data" :key="item.index">
               <g>
                 <rect :x="53.5 + index*62" :y="item.y-13" width="46" height="16" stroke="none" stroke-width="0"
                   fill-opacity="0" fill="#ffffff"></rect><text text-anchor="middle" :x="76 + index*62" :y="item.y-15"
@@ -340,7 +340,7 @@
         </thead>
         <tbody>
 
-          <tr v-for="item in datafullrake" :key="item.name">
+          <tr v-for="(item ,index) in datafullrake" :key="item.index">
             <td class="rake-overview-network">
               <div class="prime-network-logo-name"><a href="https://www.primedope.com/to-888">{{item.name}}</a></div>
             </td>
