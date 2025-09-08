@@ -184,7 +184,7 @@
       <tbody>
         <!-- v-for="(item, index) in data" :key="item.id || index" -->
         <tr v-for="(item, index) in data" :key="index">
-          <td class="rank">{{item.rank}}</td>
+          <td class="rank">{{index +1}}</td>
           <td class="network">{{item.network}}</td>
           <td>{{item.currency}} ( {{item.bigBlinds}} )</td>
           <td>{{item.netRake}}</td>
