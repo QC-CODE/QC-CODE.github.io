@@ -245,7 +245,7 @@
             </g>
             <g>
               <rect v-for="(item, index) in data" :key="item.index" :x="57 +index*62" :y="item.y" width="39"
-                :height="item.height" stroke="#7fff80" stroke-width="1" fill="#7fff80"></rect>
+                :height="item.height" stroke="#7fff80" stroke-width="1" :fill="barColors[index]"></rect>
               <!-- <rect x="120" y="163" width="38" height="261" stroke="#96ff80" stroke-width="1" fill="#96ff80"></rect>
               <rect x="182" y="148" width="38" height="276" stroke="#c7ff80" stroke-width="1" fill="#c7ff80"></rect>
               <rect x="244" y="148" width="39" height="276" stroke="#c7ff80" stroke-width="1" fill="#c7ff80"></rect>
@@ -404,6 +404,12 @@
 // #d9d902
 // #ffa600
 // #ffa600
+ barColors :[
+  '#66e266', '#7de87d', '#a5eea5', '#c5f291',
+  '#e1f58c', '#f4f76c', '#f8e768', '#fbd367',
+  '#fbb158', '#f98d48', '#f9725d', '#f96060',
+  '#f94c4c'
+],
         listplayers: ["2", "3", "4", "5", "6", "7", "8", "9"],
         rakeOptions: [
           { value: "2", text: "0.01-0.02" },
